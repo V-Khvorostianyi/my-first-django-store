@@ -1,28 +1,50 @@
-{%load static%}
-<!DOCTYPE html>
-<html lang="en">
-		<head>
-			<meta charset="UTF-8">
-			<title>mystore</title>
-			<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-			<link rel="stylesheet" href = '{% static "store/style.css" %}'>
-		</head>
-		<body>
-			<div class="content container">
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-4">
-                        <h1 class = "title">Our store will be open soon...</h1>
-						<h1 class = "title">Leave your mail pleace</h1>
-						<div>
-							<form action = "" method = "post">{%csrf_token%}
-								{{form.as_p}}
-								<div>
-									<button type = "submit" class = "btn btn-primary">Send</button>
-								</div>
-							</form>
-						</div>
-                    </div>
-		</body>
 
+<!DOCTYPE html>
+<html lang="en-us">
+        <head>
+                <meta charset="utf-8">
+                <title>My-first-store</title>
+                <meta name="description">
+                <meta name="viewport" content="width=1024">
+                <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+                <link rel="stylesheet" type="text/css" media="screen" href="//d85wutc1n854v.cloudfront.net/live/css/screen_preview_legacy.css">
+                <!--<script src="//cdn.optimizely.com/js/233905874.js"></script>-->
+                <script src="//d85wutc1n854v.cloudfront.net/live/js/behavior_legacy.js"></script>
+                <script type="text/javascript">
+                        var _gaq = _gaq || [];
+                        _gaq.push(['_setAccount', 'UA-28871117-1']);
+                        _gaq.push(['_setDomainName', 'wrapbootstrap.com']);
+                        _gaq.push(['_trackPageview']);
+                        (function() {
+                                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                        })();
+                </script>
+                <link rel="shortcut icon" href="//d85wutc1n854v.cloudfront.net/live/imgs/favicon.ico">
+        </head>
+        <body>
+                <div id="main">
+                        <div id="tray" class="topbar" sty1le="width: auto;">
+                                <div class="fill">
+                                        <div class="container">
+                                                <a class="brand" href="https://wrapbootstrap.com/"><img src="//d85wutc1n854v.cloudfront.net/live/imgs/logo.png"></a>
+                                                <h1 id="item_name"><a href="https://wrapbootstrap.com/theme/tanis-coming-soon-wordpress-theme-WB09KJ84S">Tanis - Coming Soon WordPress Theme</a></h1>
+                                                    <div class="remove"><a class="btn" href="http://azmind.com/premium/tanis/v1-0/" title="Remove this frame">Remove this frame &raquo;</a></div>
+                                        </div>
+                                </div>
+                        </div>
+                            <iframe id="preview" src="http://azmind.com/premium/tanis/v1-0/" frameborder="0" width="100%"></iframe>
+                </div>
+                <script>
+                        $(document).ready(function(){
+                                function fix_height(){
+                                        var h = $("#tray").height();   
+                                        $("#preview").attr("height", (($(window).height()) - h) + "px");
+                                }
+                                $(window).resize(function(){ fix_height(); }).resize();
+                                //$("#preview").contentWindow.focus();
+                        });
+                </script>
+        </body>
 </html>
