@@ -4,4 +4,4 @@ myvenv
 db.sqlite3
 /static
 .DS_Store
-store/templates/store/store_page_11.html
+.idea/
