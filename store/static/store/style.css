@@ -19,6 +19,13 @@ html, body {
 	color: white;
 	text-align: center;
     font-weight: 700;
-
-
 }
+.btn-orange {
+	background: darkorange;
+	border: none;
+ }
+
+.btn-orange:hover {
+	background: #ff6815;
+	border: none;
+ }
