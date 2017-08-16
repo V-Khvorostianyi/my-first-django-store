@@ -4,8 +4,14 @@ from .forms import SubscriberForm
 def store_page(request):
 
 	form = SubscriberForm(request.POST or None)
-	if request.method == 'POST':
+	if request.method == 'POST' and form.is_valid():
+		print(form.cleaned_data)
+		data = form.cleaned_data
 		print (request.POST)
-		new_form = form.save()
+		print (data["name"])
+		form.save()
 	return render(request, 'store/store_page.html', {'form':form})
 
+
+def home(request):
+	return render(request, 'store/home.html', locals())
