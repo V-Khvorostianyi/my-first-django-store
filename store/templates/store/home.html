@@ -2,16 +2,24 @@
 {% extends "base.html" %}
 {% load staticfiles  %}
 {% block content %}
-    <div class = "section top">
+    <div class = "section-top">
      <img src="{% static 'store/img/12.jpeg' %}" class="img-responsive">
     </div>
     <div class="section">
         <div class="container">
-            {% for item in products %}
+            {% for item in product %}
             <div class="row">
                 <div class="col-md-3">
                     <div class="product-item">
-                       {{ item.name }}
+                       <div class="img-responsive">
+                            <img src="/">
+                       </div>
+                        <h4>{{ item.name }}</h4>
+                        <p>{{ item.short_description|truncatechars_html:40 }}</p>
+                        <div class="add-to-card-btn">
+                            <button class="btn btn-success">Add to card</button>
+                        </div>
+
                     </div>
                 </div>
             {% endfor %}

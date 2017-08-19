@@ -1,9 +1,24 @@
 body {
-	background-color: #e0ded9;
+	background-color: lightgray;
+	color:black;
 }
 
 .product-item {
-	height: 200px;
+	height: 215px;
 	background: white;
 	position: relative;
+	border: solid 1px grey;
+	padding: 5px;
+	text-align: center;
+}
+
+.section-top {
+	margin:20px;
+}
+
+.add-to-card-btn {
+	position: absolute;
+	bottom: 5px;
+	left: 27.5%;
+
 }
