@@ -29,3 +29,9 @@ html, body {
 	background: #ff6815;
 	border: none;
  }
+
+.product-item {
+	height: 200px;
+	background: grey;
+	position: relative;
+}

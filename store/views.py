@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import SubscriberForm
+from products.models import Product
 # Create your views here.
 def store_page(request):
 
@@ -14,4 +15,5 @@ def store_page(request):
 
 
 def home(request):
-	return render(request, 'store/home.html', locals())
+	products = Product.objects.filter(is_active=True)
+	return render(request, 'store/home.html', {'products':products})

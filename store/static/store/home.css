@@ -1,0 +1,9 @@
+body {
+	background-color: #e0ded9;
+}
+
+.product-item {
+	height: 200px;
+	background: white;
+	position: relative;
+}

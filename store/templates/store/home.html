@@ -7,19 +7,14 @@
     </div>
     <div class="section">
         <div class="container">
+            {% for item in products %}
             <div class="row">
                 <div class="col-md-3">
-                  123
+                    <div class="product-item">
+                       {{ item.name }}
+                    </div>
                 </div>
-                <div class="col-md-3">
-                  123
-                </div>
-                <div class="col-md-3">
-                  123
-                </div>
-                <div class="col-md-3">
-                  123
-                </div>
+            {% endfor %}
             </div>
         </div>
     </div>
