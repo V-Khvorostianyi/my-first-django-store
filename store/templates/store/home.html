@@ -16,10 +16,10 @@
                        </div>
                         <h4>{{ item.name }}</h4>
                         <p>{{ item.short_description|truncatechars_html:40 }}</p>
+                        <div> Price {{ item.price }}UAH</div>
                         <div class="add-to-card-btn">
                             <button class="btn btn-success">Add to card</button>
                         </div>
-
                     </div>
                 </div>
             {% endfor %}

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import SubscriberForm
-from products.models import Product
+from products.models import *
 # Create your views here.
 def store_page(request):
 
