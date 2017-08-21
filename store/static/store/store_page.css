@@ -11,7 +11,7 @@ html, body {
     margin-top: 20px;
 }
 .general-container {
-	background:url('img/3.jpeg');
+	background:url('../media/img/3.jpeg');
 	height:100%;
 	font-weight: 400;
 }

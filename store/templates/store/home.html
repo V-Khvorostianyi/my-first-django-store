@@ -3,16 +3,17 @@
 {% load staticfiles  %}
 {% block content %}
     <div class = "section-top">
-     <img src="{% static 'store/img/12.jpeg' %}" class="img-responsive">
+     <img src="{% static 'media/img/12.jpeg' %}" class="img-responsive">
     </div>
     <div class="section">
         <div class="container">
+        <div class="row">
             {% for item in product_image %}
-            <div class="row">
+{#            <div class="row">#}
                 <div class="col-md-3">
                     <div class="product-item">
-                       <div class="img-responsive">
-                            <img src=""{{ product_image.image.url }}"">
+                       <div>
+                            <img src="{{ product_image.image.url }}" alt="image" class="img-responsive">
                        </div>
                         <h4>{{ item.product.name }}</h4>
                         <p>{{ item.product.short_description|truncatechars_html:40 }}</p>
