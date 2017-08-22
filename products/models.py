@@ -20,7 +20,7 @@ class Product(models.Model):
 class ProductImage(models.Model):
 
     product= models.ForeignKey(Product,blank=True, default=None)
-    image = models.ImageField(upload_to = 'store/static/media/product_img',default="store/static/media/product_img/12.jpg")
+    image = models.ImageField(upload_to = 'product_img')
     is_active = models.BooleanField(default=True)
     is_main = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)

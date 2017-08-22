@@ -13,7 +13,7 @@
                 <div class="col-md-3">
                     <div class="product-item">
                        <div>
-                            <img src="{{ product_image.image.url }}" alt="image" class="img-responsive">
+                            <img src="{{ item.image.url }}" alt="image" class="img-responsive">
                        </div>
                         <h4>{{ item.product.name }}</h4>
                         <p>{{ item.product.short_description|truncatechars_html:40 }}</p>
