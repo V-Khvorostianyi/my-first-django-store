@@ -35,3 +35,17 @@ body {
 	margin-right: auto;
 	margin-left: auto;
 }
+
+.footer {
+	height: 20px;
+	margin-bottom: -100px;
+	background-color: white;
+}
+
+.navbar {
+	margin-bottom: 0px;
+}
+
+.wrapper {
+padding-bottom: 100px;
+}
