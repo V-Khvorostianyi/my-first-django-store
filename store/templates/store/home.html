@@ -10,22 +10,7 @@
         <div class="row">
         <h1 style="text-align: center">New arrivals</h1>
             {% for item in product_image %}
-                <div class="col-md-3">
-                    <div class="product-item">
-                       <div>
-                            <img src="{{ item.image.url }}" alt="image" class="img-responsive edit">
-                       </div>
-                        <div style = "position: absolute; background: #2bee5d;top: 5%" >
-                            <span>10%</span>
-                        </div>
-                        <h4>{{ item.product.name }}</h4>
-                        <p>{{ item.product.short_description|truncatechars_html:40 }}</p>
-                        <div> Price {{ item.product.price }}UAH</div>
-                        <div class="add-to-card-btn ">
-                            <button class="btn btn-success">Add to card</button>
-                        </div>
-                    </div>
-                </div>
+                {% include 'store/product_item.html' %}
             {% endfor %}
             </div>
         </div>
@@ -36,19 +21,7 @@
         <div class="row">
         <h1 style="text-align: center">Phones</h1>
             {% for item in product_image_phone %}
-                <div class="col-md-3">
-                    <div class="product-item">
-                       <div>
-                            <img src="{{ item.image.url }}" alt="image" class="img-responsive edit">
-                       </div>
-                        <h4>{{ item.product.name }}</h4>
-                        <p>{{ item.product.short_description|truncatechars_html:40 }}</p>
-                        <div> Price {{ item.product.price }}UAH</div>
-                        <div class="add-to-card-btn ">
-                            <button class="btn btn-success">Add to card</button>
-                        </div>
-                    </div>
-                </div>
+                 {% include 'store/product_item.html' %}
             {% endfor %}
             </div>
         </div>
@@ -59,19 +32,7 @@
         <div class="row">
         <h1 style="text-align: center">Laptops</h1>
             {% for item in product_image_laptop %}
-                <div class="col-md-3">
-                    <div class="product-item">
-                       <div>
-                            <img src="{{ item.image.url }}" alt="image" class="img-responsive edit">
-                       </div>
-                        <h4>{{ item.product.name }}</h4>
-                        <p>{{ item.product.short_description|truncatechars_html:40 }}</p>
-                        <div> Price {{ item.product.price }}UAH</div>
-                        <div class="add-to-card-btn ">
-                            <button class="btn btn-success">Add to card</button>
-                        </div>
-                    </div>
-                </div>
+                {% include 'store/product_item.html' %}
             {% endfor %}
             </div>
         </div>

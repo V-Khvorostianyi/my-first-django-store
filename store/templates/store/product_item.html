@@ -1,0 +1,13 @@
+<div class="col-md-3">
+    <div class="product-item">
+       <div>
+            <img src="{{ item.image.url }}" alt="image" class="img-responsive edit">
+       </div>
+        <h4>{{ item.product.name }}</h4>
+        <p>{{ item.product.short_description|truncatechars_html:40 }}</p>
+        <div> Price {{ item.product.price }}UAH</div>
+        <div class="add-to-card-btn ">
+            <button class="btn btn-success">Add to card</button>
+        </div>
+    </div>
+</div>
