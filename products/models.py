@@ -4,6 +4,13 @@ class ProductCategory(models.Model):
     name = models.CharField(max_length=64, blank=True, default=None)
     is_active = models.BooleanField(default=True)
 
+    def __str__(self):
+        return "%s %s" % (self.name)
+
+    class Meta:
+        verbose_name = 'Product Category'
+        verbose_name_plural = 'Products Categories'
+
 class Product(models.Model):
     name = models.CharField(max_length=64, blank=True, default=None)
     category = models.ForeignKey(ProductCategory,blank=True, null = True, default = None)
