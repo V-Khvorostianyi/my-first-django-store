@@ -1,7 +1,9 @@
 <div class="col-md-3">
     <div class="product-item">
        <div>
+            <a href="{% url 'product' item.product.id %}">
             <img src="{{ item.image.url }}" alt="image" class="img-responsive edit">
+            </a>
        </div>
         {% if item.product.discount %}
         <div class="discount-container">
