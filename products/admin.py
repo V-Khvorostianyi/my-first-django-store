@@ -3,7 +3,15 @@ from .models import *
 
 
 # Register your models here.
+#____________________________________________________
+class ProductCategoryAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in ProductCategory._meta.fields]
 
+    class Meta:
+        model = ProductCategory
+
+admin.site.register(ProductCategory, ProductCategoryAdmin)
+#_______________________________________________________
 class ProductImageInline(admin.TabularInline):
     model = ProductImage
     extra = 0

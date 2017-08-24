@@ -5,7 +5,7 @@ class ProductCategory(models.Model):
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
-        return "%s %s" % (self.name)
+        return "%s" % (self.name)
 
     class Meta:
         verbose_name = 'Product Category'
