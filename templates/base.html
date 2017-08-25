@@ -12,13 +12,16 @@
 		</head>
 		<body>
 			<div class="wrapper">
-              {% include 'navbar.html' %}
+                <div class="wrapper-content">
+                    {% include 'navbar.html' %}
 
-                {% block content %}
-                {% endblock content %}
+                    {% block content %}
+                    {% endblock content %}
 
+                </div>
+
+                {% include 'footer.html' %}
             </div>
-            {% include 'footer.html' %}
          <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
