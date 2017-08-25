@@ -1,24 +1,21 @@
 
 {% extends "base.html" %}
 {% load staticfiles  %}
+
 {% block content %}
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                {%for image in product.productimage_set.all%}
+                {% for image in product.productimage_set.all %}
                     <img src="{{ image.url }}">
                 {% endfor %}
             </div>
             <div class="col-md-6">
                 <h1 class="text-center">
-                    {{ product.price }}
+                    {{ product.name }}
                 </h1>
-                <p>
-                    Price: {{ product.price }}
-                </p>
-                <div class="add-to-card-btn ">
-                    <button class="btn btn-success">Add to card</button>
-                </div>
+                <p>Price: {{ product.price }}</p>
+                <p>{{ product.description }}</p>
             </div>
         </div>
     </div>
