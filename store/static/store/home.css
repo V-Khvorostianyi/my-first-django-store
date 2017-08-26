@@ -40,6 +40,10 @@ body {
 	height: 200px;
 	margin-bottom: -100px;
 	background-color: white;
+	position: fixed; /* Фиксированное положение */
+    left: 0; bottom: 0; /* Левый нижний угол */
+    padding: 10px; /* Поля вокруг текста */
+    width: 100%; /* Ширина слоя */
 }
 
 .navbar {
@@ -62,7 +66,7 @@ padding-bottom: 100px;
 
 .section-delivery {
 	height: 300px;
-	background-color: #24c74f;
+	background-color: rgba(71, 255, 105, 0.42);
 	text-align: center;
 	color: white;
 	font-weight: 700;

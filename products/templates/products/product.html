@@ -6,8 +6,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                {% for image in product.productimage_set.all %}
-                    <img src="{{ image.url }}">
+                {% for item in product.productimage_set.all %}
+                    <img src="{{ item.image.url }}">
                 {% endfor %}
             </div>
             <div class="col-md-6">
