@@ -36,6 +36,10 @@ body {
 	margin-left: auto;
 }
 
+.wrapper-content {
+    overflow: auto;
+    padding-bottom: 180px; /* must be same height as the footer */
+}
 .footer {
     position: relative;
     margin-top: -180px; /* negative value of footer height */
