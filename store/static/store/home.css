@@ -37,13 +37,11 @@ body {
 }
 
 .footer {
-	height: 200px;
-	margin-bottom: -100px;
-	background-color: white;
-	position: fixed; /* Фиксированное положение */
-    left: 0; bottom: 0; /* Левый нижний угол */
-    padding: 10px; /* Поля вокруг текста */
-    width: 100%; /* Ширина слоя */
+    position: relative;
+    margin-top: -180px; /* negative value of footer height */
+    height: 180px;
+    clear: both;
+    background-color: white;
 }
 
 .navbar {
