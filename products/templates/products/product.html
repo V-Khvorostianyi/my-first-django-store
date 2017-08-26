@@ -6,9 +6,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                {% for item in product.productimage_set.all %}
-                    <img src="{{ item.image.url }}" class="image-responsive">
-                {% endfor %}
+                <div class="product-image-item">
+                    {% for item in product.productimage_set.all %}
+                        <img src="{{ item.image.url }}" class="image-responsive">
+                    {% endfor %}
+                </div>
             </div>
             <div class="col-md-6">
                 <h1 class="text-center">
