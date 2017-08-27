@@ -84,3 +84,9 @@ padding-bottom: 100px;
 	padding: 10px;
 
 }
+
+.navbar-top {
+	min-height: 20px;
+	height: auto;
+	background: rgba(132, 140, 255, 0.21);
+}
