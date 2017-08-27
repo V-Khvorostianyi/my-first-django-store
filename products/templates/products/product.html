@@ -37,7 +37,9 @@
                 <div>
                     <form id="form_buying_product" class="form-inline">
                         <input type="number" class="form-control" id="number">
-                        <button type="submit" class="btn btn-success btn-buy">
+                        <button type="submit" class="btn btn-success btn-buy" id="submit-btn"
+                                data-product_id = '{{ product_id }}'
+                                data-name = '{{ product.name }}'>
                             Buy
                         </button>
                     </form>

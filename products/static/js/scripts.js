@@ -5,8 +5,12 @@ $(document).ready(function() {
     console.log(form);
     form.on('submit',function (e) {
         e.preventDefault();
-        console.log('123');
         var qty = $('#number').val();
         console.log(qty);
+        var submit_btn = $('#submit-btn');
+        var name = submit_btn.data('name');
+        var product_id = submit_btn.data('product_id');
+        console.log(name);
+        console.log(product_id);
     });
 });
