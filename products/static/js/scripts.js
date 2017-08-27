@@ -15,4 +15,5 @@ $(document).ready(function() {
         console.log(product_id);
         console.log(product_price);
     });
+
 });
