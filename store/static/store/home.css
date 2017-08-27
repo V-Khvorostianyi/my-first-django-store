@@ -100,3 +100,6 @@ padding-bottom: 100px;
 .basket {
 	padding-left: 17%;
 }
+ul.basket-item {
+	width: 300px;
+}
