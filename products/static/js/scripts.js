@@ -14,7 +14,8 @@ $(document).ready(function() {
         console.log(name);
         console.log(product_id);
         console.log(product_price);
-        $('ul.basket-item').append('<li>hello</li>');
+        // language=HTML
+        $('ul.basket-item').append('<li>' + name+', qty: ' + qty +' total price: '+product_price*qty+'UAH</li>');
     });
 
 });
