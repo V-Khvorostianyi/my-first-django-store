@@ -96,3 +96,7 @@ padding-bottom: 100px;
 	background: #c5d6c7;
 	border: none;
 }
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+	background-color: #def5e3;
+}
