@@ -102,4 +102,8 @@ padding-bottom: 100px;
 }
 ul.basket-item {
 	width: 300px;
+
+}
+#bsk-li {
+	text-align: center !important;
 }
