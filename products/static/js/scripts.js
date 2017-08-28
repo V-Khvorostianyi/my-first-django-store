@@ -20,6 +20,5 @@ $(document).ready(function() {
     $(document).on('click','.delete_item', function () {
         $(this).closest('li').remove();
 
-        
     })
-});
+})
