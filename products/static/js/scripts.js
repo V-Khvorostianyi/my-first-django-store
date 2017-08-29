@@ -15,6 +15,15 @@ $(document).ready(function() {
         console.log(product_id);
         console.log(product_price);
         // language=HTML
+         $.ajax({
+             url: url,
+             type: 'POST',
+             data: data,
+             cache: true,
+             success: function (data) {
+                 console.log("OK");
+                 console.log(data.products_total_nmb);
+                 if (data.products_total_nmb || data.products_total_nmb == 0){
         $('.basket-item').append('<li>'+name+', qty: ' + qty +', total price: '+product_price*qty+'UAH'+'<a href="" id="id-delete_item" class="delete_item" >x</a>'+'</li>');
     });
     $(document).on('click','.delete_item', function (e) {
