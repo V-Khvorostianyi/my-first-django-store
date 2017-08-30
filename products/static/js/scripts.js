@@ -9,7 +9,7 @@ $(document).ready(function() {
         var data = {};
         data.product_id = product_id;
         data.qty = qty;
-         var csrf_token = $('#form_buying_product [name="csrfmiddlewaretoken"]').val();
+         var csrf_token = $('#form_buying_product').find('[name="csrfmiddlewaretoken"]').val();
          data["csrfmiddlewaretoken"] = csrf_token;
 
         if (is_delete){
@@ -18,7 +18,7 @@ $(document).ready(function() {
 
          var url = form.attr("action");
 
-        console.log(data)
+        console.log(data);
          $.ajax({
              url: url,
              type: 'POST',
@@ -65,3 +65,4 @@ $(document).ready(function() {
 
     })
 });
+})
