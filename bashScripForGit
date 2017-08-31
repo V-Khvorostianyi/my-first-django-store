@@ -1,5 +1,7 @@
 #!/bin/bash
 git status
+echo = "enter commit"
+read commit 
 git add -A
-git commit -a
+git commit -m "$commit"
 git push
