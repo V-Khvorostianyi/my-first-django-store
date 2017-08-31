@@ -38,14 +38,14 @@ body {
 
 .wrapper-content {
     overflow: auto;
-    padding-bottom: 180px; /* must be same height as the footer */
+    padding-bottom:6%; /* must be same height as the footer */
 }
 .footer {
 
     line-height: 100px;
 	position: relative;
 	background: white;
-	padding-bottom:-180px;
+	padding-bottom:-15%;
 	width: 100%;
 	margin-left: 0;
 	margin-right: 0;
