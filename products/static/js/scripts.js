@@ -18,8 +18,10 @@ $(document).ready(function() {
         var data ={};
         data.product_id = product_id;
         data.qty = qty;
+        var csrf_token = $('#form_buying_product [name="csrfmiddlewaretoken"]').val();
+        data["csrfmiddlewaretoken"] = csrf_token;
+        var url = form.attr('action');
 
-        var url = '';
         $.ajax({
             url : url,
             type : 'POST',
@@ -27,6 +29,9 @@ $(document).ready(function() {
             cache :true,
             success:function (data) {
                 console.log('OK');
+            },
+            error:function () {
+                console.log('error');
             }
         })
         // language=HTML
