@@ -16,6 +16,9 @@ $(document).ready(function() {
         console.log(product_price);
 
         var data ={};
+        data.product_id = product_id;
+        data.qty = qty;
+
         var url = '';
         $.ajax({
             url : url,
