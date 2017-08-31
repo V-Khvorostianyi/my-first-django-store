@@ -14,6 +14,18 @@ $(document).ready(function() {
         console.log(name);
         console.log(product_id);
         console.log(product_price);
+
+        var data ={};
+        var url = '';
+        $.ajax({
+            url : url,
+            type : 'POST',
+            data : data,
+            cache :true,
+            success:function (data) {
+                console.log('OK');
+            }
+        })
         // language=HTML
         $('.basket-item').append('<li>'+name+', qty: ' + qty +', total price: '+product_price*qty+'UAH'+'<a href="" id="id-delete_item" class="delete_item" >x</a>'+'</li>');
     });
