@@ -21,7 +21,7 @@ $(document).ready(function() {
         var csrf_token = $('#form_buying_product [name="csrfmiddlewaretoken"]').val();
         data["csrfmiddlewaretoken"] = csrf_token;
         var url = form.attr('action');
-
+        console.log(data)
         $.ajax({
             url : url,
             type : 'POST',

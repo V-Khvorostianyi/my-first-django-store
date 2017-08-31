@@ -1,6 +1,7 @@
 
 from django.shortcuts import render
 from products.models import *
+from orders.views import *
 
 
 def product(request, product_id):
