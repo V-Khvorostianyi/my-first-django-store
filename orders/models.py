@@ -81,6 +81,7 @@ def product_post_save(sender, instance, **kwargs):
 post_save.connect(product_post_save, sender=ProductInOrder)
 
 class ProductInCard(models.Model):
+    session_key = models.CharField(max_length=128,default=None)
     order = models.ForeignKey(Order, blank=True, default=None)
     product = models.ForeignKey(Product, blank=True, default=None)
     qty = models.IntegerField(default=1)
