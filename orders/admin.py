@@ -32,3 +32,12 @@ class ProductInOrderAdmin(admin.ModelAdmin):
         model = ProductInOrder
 
 admin.site.register(ProductInOrder, ProductInOrderAdmin)
+#_________________________________________________
+
+class ProductInCardAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in ProductInCard._meta.fields]
+
+    class Meta:
+        model = ProductInCard
+
+admin.site.register(ProductInCard, ProductInCardAdmin)

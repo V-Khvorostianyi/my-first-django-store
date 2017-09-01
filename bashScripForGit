@@ -1,10 +1,10 @@
 #!/bin/bash
-git status
-echo  Is it OK? Press any key to access or 'ctrl-c' to escape
-read -r answer
-echo "enter commit"
-read commit 
 git add -A
+git status
+echo  Is it OK? for yes press any key, or 'Ctrl-C' to escape
+read  answer
+echo "enter commit"
+read commit
 git commit -m "$commit"
 git push
 
