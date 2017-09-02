@@ -28,6 +28,7 @@ $(document).ready(function() {
             data : data,
             cache :true,
             success:function (data) {
+                console.log()
                 console.log('OK');
             },
             error:function () {
