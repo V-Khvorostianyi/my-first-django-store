@@ -9,5 +9,5 @@ def basket_adding(request):
     data = request.POST
     product_id = data.get('product_id')
     qty = data.get('qty')
-    new_product = ProductInCard.objects.get(session_key=session_key,product_id=product_id,qty=qty )
+    new_product = ProductInCard.objects.create(session_key=session_key,product_id=product_id,qty=qty )
     return JsonResponse(return_dict)
