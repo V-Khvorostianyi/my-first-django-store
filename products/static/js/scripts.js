@@ -11,9 +11,9 @@ $(document).ready(function() {
         var name = submit_btn.data('name');
         var product_id = submit_btn.data('product_id');
         var product_price = submit_btn.data('price');
-        console.log(name);
-        console.log(product_id);
-        console.log(product_price);
+        // console.log(name);
+        // console.log(product_id);
+        // console.log(product_price);
 
         var data ={};
         data.product_id = product_id;
@@ -28,7 +28,6 @@ $(document).ready(function() {
             data : data,
             cache :true,
             success:function (data) {
-                console.log()
                 console.log('OK');
             },
             error:function () {
