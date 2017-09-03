@@ -98,4 +98,9 @@ class ProductInCard(models.Model):
         verbose_name = 'Product in Card'
         verbose_name_plural = 'Products in Card'
 
+    def save(self, *args, **kwargs):
 
+        self.price = self.product.price
+        self.total_price = int(self.qty) * self.price
+
+        super(ProductInCard, self).save(*args, **kwargs)
