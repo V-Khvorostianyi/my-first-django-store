@@ -81,15 +81,15 @@ def product_post_save(sender, instance, **kwargs):
 post_save.connect(product_post_save, sender=ProductInOrder)
 
 class ProductInCard(models.Model):
-    session_key = models.CharField(max_length=128,default=None)
-    # order = models.ForeignKey(Order, blank=True, default=None)
-    product = models.ForeignKey(Product, blank=True, default=None)
+    session_key = models.CharField(max_length=128, blank=True, null=True, default=None)
+    order = models.ForeignKey(Order, blank=True, null=True, default=None)
+    product = models.ForeignKey(Product, blank=True, null=True, default=None)
     qty = models.IntegerField(default=1)
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    created = models.DateTimeField(auto_now_add = True,auto_now = False)
-    updated = models.DateTimeField(auto_now_add = False,auto_now = True)
+    total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)  # price*nmb
     is_active = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __str__(self):
         return "%s" % self.product.name

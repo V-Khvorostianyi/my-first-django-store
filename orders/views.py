@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
-from  .models import ProductInCard
+from .models import *
 # Create your views here.
 def basket_adding(request):
     return_dict = dict()

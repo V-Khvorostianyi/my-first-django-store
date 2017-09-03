@@ -21,7 +21,7 @@ $(document).ready(function() {
         var csrf_token = $('#form_buying_product [name="csrfmiddlewaretoken"]').val();
         data["csrfmiddlewaretoken"] = csrf_token;
         var url = form.attr('action');
-        // console.log(data)
+        console.log(data)
         $.ajax({
             url : url,
             type : 'POST',
@@ -29,11 +29,12 @@ $(document).ready(function() {
             cache :true,
             success:function (data) {
                 console.log('OK');
+                console.log(data.products_total_qty)
             },
             error:function () {
                 console.log('error');
             }
-        })
+        });
         // language=HTML
         $('.basket-item').append('<li>'+name+', qty: ' + qty +', total price: '+product_price*qty+'UAH'+'<a href="" id="id-delete_item" class="delete_item" >x</a>'+'</li>');
     });
