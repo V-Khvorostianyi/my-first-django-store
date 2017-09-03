@@ -20,7 +20,6 @@ body {
 
 .section-top {
 	margin:20px;
-	;
 }
 
 .add-to-card-btn {
@@ -116,4 +115,7 @@ ul.basket-item>li {
 	font-weight: 500;
 	color: green;
 
+}
+.img-top {
+	width: 100%;
 }
