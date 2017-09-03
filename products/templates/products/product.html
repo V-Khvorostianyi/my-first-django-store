@@ -8,7 +8,7 @@
             <div class="col-md-6">
                 <div class="product-image-item">
                     {% for item in product.productimage_set.all %}
-                        <img src="{{ item.image.url }}" class="image-responsive">
+                        <img src="{{ item.image.url }}" class="image-responsive item-img">
                     {% endfor %}
                 </div>
             </div>
