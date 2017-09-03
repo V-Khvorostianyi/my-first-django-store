@@ -19,9 +19,9 @@ class Product(models.Model):
     short_description = models.TextField(max_length=200, blank=True, null = True, default = None)
     description = models.TextField(max_length=200, blank=True, null = True, default = None)
     is_active = models.BooleanField(default=True)
+
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
-
 
     def __str__(self):
         return "%s %s" % (self.name, self.price)
