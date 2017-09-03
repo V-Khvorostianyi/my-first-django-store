@@ -35,7 +35,14 @@
 
           <ul class="nav navbar-nav navbar-right basket">
               <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Card<span id="card_total_orders"></span><span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Card<span id="card_total_orders">
+                      {% if products_total_nmb  %}
+                          ({{ products_total_nmb }})
+                      {% else %}
+                          (0)
+                      {% endif %}
+                    </span><span class="caret"></span></a>
+
                   <ul class="dropdown-menu basket-item">
 
                   </ul>
