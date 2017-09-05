@@ -30,8 +30,8 @@ $(document).ready(function() {
             success:function (data) {
                 console.log('OK');
                 console.log(data.products_total_qty);
-                if (data.products_total_qty) {
-                    $('#card_total_orders').text("("+data.products_total_qty+")");
+                // if (data.products_total_qty) {
+                //     $('#card_total_orders').text("("+data.products_total_qty+")");
                 }
             },
             error:function () {
