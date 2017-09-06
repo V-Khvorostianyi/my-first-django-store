@@ -33,11 +33,12 @@ $(document).ready(function() {
                 if (data.products_total_qty) {
                     $('#card_total_orders').text("("+data.products_total_qty+")");
                     console.log(data.products)
-                    // $.each(data.products,function () {
-                    //     // $('.basket-item').append('<li>'+name+', qty: ' + qty +', '
-                    //     // +'total price: '+product_price*qty+'UAH'
-                    //     // +'<a href="" id="id-delete_item" class="delete_item" >x</a>'+'</li>');
-                    // });
+                    $.each(data.products,function (key,value) {
+                        $('.basket-item').append('<li>'+value.name+', qty: ' + value.qty +', '
+                        +'total price: '+value.total_price+'UAH'
+                        // +'<a href="" id="id-delete_item" class="delete_item" >x</a>'
+                        +'</li>');
+                    });
 
                 }
             },
