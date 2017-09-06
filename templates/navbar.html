@@ -45,7 +45,7 @@
 
                   <ul class="dropdown-menu basket-item">
                       {% for item in products_in_basket %}
-                          <li>{{ item.product.name }}</li>
+                          <li>{{ item.product.name }}, qty:{{ item.qty }}, total price:{{ item.total_price }}</li>
                       {% endfor %}
 
                   </ul>
