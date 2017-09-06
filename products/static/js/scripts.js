@@ -32,7 +32,8 @@ $(document).ready(function() {
                 console.log(data.products_total_qty);
                 if (data.products_total_qty) {
                     $('#card_total_orders').text("("+data.products_total_qty+")");
-                    console.log(data.products)
+                    console.log(data.products);
+                    $('.basket-item').html("");
                     $.each(data.products,function (key,value) {
                         $('.basket-item').append('<li>'+value.name+', qty: ' + value.qty +', '
                         +'total price: '+value.total_price+'UAH'
