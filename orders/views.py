@@ -9,7 +9,9 @@ def basket_adding(request):
     data = request.POST
     product_id = data.get('product_id')
     qty = data.get('qty')
-    new_product, created = ProductInCard.objects.update_or_create(session_key=session_key,product_id=product_id,defaults={'qty':qty} )
+    new_product, created = ProductInCard.objects.get_or_create(session_key=session_key,product_id=product_id,defaults={'qty':qty} )
+    if not created:
+        new_product.qty +=qty
     products_in_card = ProductInCard.objects.filter(session_key=session_key, is_active=True)
     products_total_qty = products_in_card.count()
     return_dict["products_total_qty"] = products_total_qty
