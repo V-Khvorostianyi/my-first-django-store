@@ -44,6 +44,9 @@
                     </span><span class="caret"></span></a>
 
                   <ul class="dropdown-menu basket-item">
+                      {% for item in products_in_basket %}
+                          <li>{{ item.product.name }}</li>
+                      {% endfor %}
 
                   </ul>
               </li>
