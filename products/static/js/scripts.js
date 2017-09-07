@@ -67,5 +67,5 @@ $(document).ready(function() {
          qty = 0;
          basketUpdating(product_id, nmb, is_delete=true)
 
-    })
-});
+    });
+}});
