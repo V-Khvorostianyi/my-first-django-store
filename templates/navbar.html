@@ -45,7 +45,9 @@
 
                   <ul class="dropdown-menu basket-item">
                       {% for item in products_in_basket %}
-                          <li>{{ item.product.name }}, qty:{{ item.qty }}, total price:{{ item.total_price }}</li>
+                          <li>{{ item.product.name }}, qty:{{ item.qty }}, total price:{{ item.total_price }}
+                          <a class="delete-item" href="" data-product_id="{{ product_in_basket.id }}">x</a>
+                          </li>
                       {% endfor %}
 
                   </ul>
