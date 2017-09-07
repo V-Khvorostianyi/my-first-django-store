@@ -37,7 +37,7 @@ $(document).ready(function() {
                     $.each(data.products,function (key,value) {
                         $('.basket-item').append('<li>'+value.name+', qty: ' + value.qty +', '
                         +'total price: '+value.total_price+'UAH'
-                        // +'<a href="" id="id-delete_item" class="delete_item" >x</a>'
+                        +'<a href="" id="id-delete_item" class="delete_item" >x</a>'
                         +'</li>');
                     });
 
