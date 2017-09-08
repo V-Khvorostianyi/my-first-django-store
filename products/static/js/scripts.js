@@ -60,6 +60,7 @@ $(document).ready(function() {
             }
         });
 
+        // basketUpading();
     });
      $(document).on('click', '.delete-item', function(e){
          e.preventDefault();
