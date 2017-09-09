@@ -14,8 +14,7 @@ def basket_adding(request):
     if is_delete == 'true':
         ProductInCard.objects.filter(id=product_id).update(is_active=False)
     else:
-        new_product, created = ProductInCard.objects.get_or_create(session_key=session_key, product_id=product_id,
-                                                                     is_active=True, defaults={'qty':qty} )
+        new_product, created = ProductInCard.objects.get_or_create(session_key=session_key, product_id=product_id,is_active=True, defaults={'qty':qty} )
         if not created:
             new_product.qty +=int(qty)
             new_product.save(force_update=True)
