@@ -29,6 +29,7 @@ def basket_adding(request):
         product_dict = dict()
         product_dict["name"] = item.product.name
         product_dict["qty"] = item.qty
+        product_dict["id"] = item.id
         product_dict["total_price"] = item.total_price
         return_dict["products"].append(product_dict)
     return JsonResponse(return_dict)
