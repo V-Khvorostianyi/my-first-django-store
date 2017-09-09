@@ -40,7 +40,7 @@ $(document).ready(function() {
                         +'<a href="" id="id-delete_item" class="delete_item" >x</a>'
                         +'</li>');
                     });
-
+                //ok
                 }
             },
             error:function () {
