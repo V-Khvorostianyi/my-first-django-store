@@ -9,6 +9,7 @@ def basket_adding(request):
     data = request.POST
     product_id = data.get('product_id')
     qty = data.get('qty')
+    # is_delete =
     new_product, created = ProductInCard.objects.get_or_create(session_key=session_key,product_id=product_id,defaults={'qty':qty} )
     if not created:
         new_product.qty +=int(qty)
