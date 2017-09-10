@@ -65,7 +65,7 @@ $(document).ready(function() {
         e.preventDefault();
         $(this).closest('li').remove();
         qty = 0;
-        product_id = $(this).data_product_id;
+        product_id = $(this).data("product_id");
         basketUpdate(product_id,qty, is_delete=true)
 
     })
