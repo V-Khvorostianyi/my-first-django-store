@@ -25,14 +25,14 @@ $(document).ready(function() {
             success:function (data) {
                 console.log('OK');
                 console.log(data.products_total_qty);
-                if (data.products_total_qty) {
+                if (data.products_total_qty || data.products_total_qty==0 ) {
                     $('#card_total_orders').text("("+data.products_total_qty+")");
                     console.log(data.products);
                     $('.basket-item').html("");
                     $.each(data.products,function (key,value) {
                         $('.basket-item').append('<li>'+value.name+', qty: ' + value.qty +', '
                         +'total price: '+value.total_price+'UAH'
-                        +'<a href="" id="id-delete_item" class="delete_item"  data-product_id = "'+value.product_id+'" >x</a>'
+                        +'<a href="" id="id-delete_item" class="delete_item"  data-product_id = "'+value.id+'" >x</a>'
                         +'</li>');
                     });
                 //ok
