@@ -10,6 +10,11 @@ $(document).ready(function() {
         data.qty = qty;
         var csrf_token = $('#form_buying_product [name="csrfmiddlewaretoken"]').val();
         data["csrfmiddlewaretoken"] = csrf_token;
+
+        if (is_delete){
+            data["is_delete"] = true;
+        }
+
         var url = form.attr('action');
         console.log(data)
         $.ajax({

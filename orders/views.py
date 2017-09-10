@@ -10,8 +10,9 @@ def basket_adding(request):
     product_id = data.get('product_id')
     qty = data.get('qty')
     is_delete = data.get("is_delete")
-    if is_delete == True:
-        ProductInCard.objects.filter(id = product_id, is_active = False)
+
+    if is_delete == 'true':
+        ProductInCard.objects.filter(id = product_id).update(is_active=False)
 
     else:
     #     some code
