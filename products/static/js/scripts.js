@@ -4,7 +4,7 @@ $(document).ready(function() {
     form = $('#form_buying_product');
     console.log(form);
 
-    function basketUpdate() {
+    function basketUpdate(product_id,qty, is_delete) {
         var data ={};
         data.product_id = product_id;
         data.qty = qty;
@@ -27,7 +27,7 @@ $(document).ready(function() {
                     $.each(data.products,function (key,value) {
                         $('.basket-item').append('<li>'+value.name+', qty: ' + value.qty +', '
                         +'total price: '+value.total_price+'UAH'
-                        +'<a href="" id="id-delete_item" class="delete_item" >x</a>'
+                        +'<a href="" id="id-delete_item" class="delete_item"  data-product_id = "'+value.product_id+'" >x</a>'
                         +'</li>');
                     });
                 //ok
@@ -53,13 +53,15 @@ $(document).ready(function() {
         // console.log(name);
         // console.log(product_id);
         // console.log(product_price);
-        basketUpdate()
+        basketUpdate(product_id,qty, is_delete=false)
 
     });
     $(document).on('click','.delete_item', function (e) {
         e.preventDefault();
         $(this).closest('li').remove();
-
+        qty = none;
+        product_id = $(this).data_product_id;
+        basketUpdate(product_id,qty, is_delete=true)
 
     })
 });
