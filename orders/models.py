@@ -100,7 +100,8 @@ class ProductInCard(models.Model):
 
     def save(self, *args, **kwargs):
 
-        self.price = self.product.price
+        price = self.product.price
+        self.price = price
         self.total_price = int(self.qty) * self.price
 
         super(ProductInCard, self).save(*args, **kwargs)
