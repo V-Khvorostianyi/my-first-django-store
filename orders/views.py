@@ -35,3 +35,6 @@ def basket_adding(request):
         product_dict["total_price"] = item.total_price
         return_dict["products"].append(product_dict)
     return JsonResponse(return_dict)
+
+def checkout(request):
+    return render(request, 'orders/checkout.html', locals())
