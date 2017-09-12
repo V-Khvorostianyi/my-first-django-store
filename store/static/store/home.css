@@ -37,18 +37,17 @@ body {
 }
 
 .wrapper-content {
+	position: relative;
     overflow: auto;
-    padding-bottom:15%; /* must be same height as the footer */
+    padding-bottom:100px; /* must be same height as the footer */
 }
 .footer {
 
     line-height: 100px;
-	position: relative;
+	position: absolute;
 	background: white;
-	padding-top:-90%;
+	top:-100px;
 	width: 100%;
-	margin-left: 0;
-	margin-right: 0;
 	height: 100px;
 	text-align: center
 
