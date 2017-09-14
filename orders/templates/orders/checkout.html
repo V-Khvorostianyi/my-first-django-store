@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Checkout</h1>
+                    <h1 class="text-center">Your Cart</h1>
                     <h3 class="text-center">Products in Cart</h3>
                     <h5 class="text-center">Total: {{ request.session.basket.total_price }} грн </h5>
                             {{ request.session.basket.products }}
@@ -13,7 +13,8 @@
 {#                        {% for item in product_in_card %}#}
 {#                            {{ item.product.name }}#}
 {#                        {% endfor %}#}
-                 <table class="table">
+                    <form>
+                        <table class="table">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -46,7 +47,7 @@
                                 {% endfor %}
                             </tbody>
                         </table>
-
+                    </form>
                 </div>
             </div>
         </div>
