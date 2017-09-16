@@ -14,7 +14,7 @@
 {#                            {{ item.product.name }}#}
 {#                        {% endfor %}#}
                     <form>
-                        <table class="table">
+                        <table class="table text-right">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -47,6 +47,11 @@
                                 {% endfor %}
                             </tbody>
                         </table>
+                        <div class="text-right">
+                            <b>Total sum: </b><span class="total_order_amount">
+                                XXUAH
+                            </span>
+                        </div>
                         <div class="text-left">
                             <button type="submit" class="btn btn-primary btn-lg">
                                 Make an order
