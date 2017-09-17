@@ -118,3 +118,7 @@ ul.basket-item>li {
 	width: 100%;
 }
 
+#id {
+	position: relative;
+    padding-right: 100px;
+}
