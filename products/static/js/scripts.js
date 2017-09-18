@@ -6,11 +6,12 @@ $(document).ready(function() {
     function carculatingBasketAmount() {
         var total_order_amount = 0;
         $(".total_product_in_cart_amount").each(function () {
-            total_order_amount +=  $(this).text;
-    })
+            total_order_amount +=  parseInt($(this).text);
+    });
+        console.log(total_order_amount)
     }
 
-    carculatingBasketAmount()
+    carculatingBasketAmount();
 
     function basketUpdate(product_id,qty, is_delete) {
         var data ={};
