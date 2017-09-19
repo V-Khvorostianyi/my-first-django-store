@@ -4,6 +4,7 @@ $(document).ready(function() {
     form = $('#form_buying_product');
     console.log(form);
 
+
     function basketUpdate(product_id,qty, is_delete) {
         var data ={};
         data.product_id = product_id;
@@ -68,5 +69,30 @@ $(document).ready(function() {
         product_id = $(this).data("product_id");
         basketUpdate(product_id,qty, is_delete=true)
 
-    })
+    });
+
+    function carculatingBasketAmount() {
+        var total_order_amount = 0;
+        $('.total_product_in_cart_amount').each(function () {
+            total_order_amount +=  parseFloat($(this).text());
+    });
+        total_order_amount = total_order_amount.toFixed(2);
+        $('.total_order_amount').text(total_order_amount+"UAH");
+    };
+
+    $(document).on('change', ".product-in-basket-qty", function(){
+        var current_nmb = $(this).val();
+        console.log(current_nmb);
+
+        var current_tr = $(this).closest('tr');
+        var current_price = parseFloat(current_tr.find('.product-price').text()).toFixed(2);
+        console.log(current_price);
+        var total_amount = parseFloat(current_nmb*current_price).toFixed(2);
+        console.log(total_amount);
+        current_tr.find('.total_product_in_cart_amount').text(total_amount);
+
+        carculatingBasketAmount();
+    });
+
+    carculatingBasketAmount();
 });

@@ -35,3 +35,8 @@ def basket_adding(request):
         product_dict["total_price"] = item.total_price
         return_dict["products"].append(product_dict)
     return JsonResponse(return_dict)
+
+def checkout(request):
+    session_key = request.session.session_key
+    product_in_card = ProductInCard.objects.filter(session_key=session_key,is_active = True)
+    return render(request, 'orders/checkout.html', locals())

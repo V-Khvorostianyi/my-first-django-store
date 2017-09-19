@@ -1,0 +1,73 @@
+
+{% extends "base.html" %}
+{% load staticfiles  %}
+{% block content %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8-offset-2">
+                    <h1 class="text-center">Your Cart</h1>
+                    <h3 class="text-center">Products in Cart</h3>
+                    <h5 class="text-center">Total: {{ request.session.basket.total_price }} грн </h5>
+                            {{ request.session.basket.products }}
+{#                    <p>Total cost: {{ product_in_card.product.total_price }}</p>#}
+{#                        {% for item in product_in_card %}#}
+{#                            {{ item.product.name }}#}
+{#                        {% endfor %}#}
+                    <form>
+                        <table class="table text-left">
+                            <thead align="right">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Qty</th>
+                                    <th>Price per item</th>
+                                    <th>Total price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for product_in_basket in products_in_basket %}
+                                    <tr>
+                                        <td>
+                                             {{ product_in_basket.product.name }}
+                                        </td>
+                                        <td>
+                                             <input value="{{ product_in_basket.qty }}" type="number"
+                                                    class="product-in-basket-qty" name="product_in_cart_{{ product_in_basket.id }}">
+                                        </td>
+                                        <td>
+                                            <span class="product-price">
+                                                {{ product_in_basket.price}}
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="total_product_in_cart_amount">
+                                                {{ product_in_basket.total_price }}
+                                            </span>
+                                        </td>
+
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <div class="text-right">
+                            <b>Total sum: </b><span class="total_order_amount">
+
+                            </span>
+                        </div>
+                        <div class="text-left">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                Make an order
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-md-12">
+
+                </div>
+            </div>
+        </div>
+
+
+
+{% endblock content %}
+
