@@ -76,8 +76,23 @@ $(document).ready(function() {
         $('.total_product_in_cart_amount').each(function () {
             total_order_amount +=  parseFloat($(this).text());
     });
-        console.log(total_order_amount)
-    }
+        console.log(total_order_amount);
+        $('.total_order_amount').text(total_order_amount+"UAH");
+    };
+
+    $(document).on('change', ".product-in-basket-qty", function(){
+        var current_nmb = $(this).val();
+        console.log(current_nmb);
+
+        var current_tr = $(this).closest('tr');
+        var current_price = parseFloat(current_tr.find('.product-price').text()).toFixed(2);
+        console.log(current_price);
+        var total_amount = parseFloat(current_nmb*current_price).toFixed(2);
+        console.log(total_amount);
+        current_tr.find('.total_product_in_cart_amount').text(total_amount);
+
+        carculatingBasketAmount();
+    });
 
     carculatingBasketAmount();
 });
