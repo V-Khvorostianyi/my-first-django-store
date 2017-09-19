@@ -3,15 +3,7 @@ $(document).ready(function() {
     var form;
     form = $('#form_buying_product');
     console.log(form);
-    function carculatingBasketAmount() {
-        var total_order_amount = 0;
-        $(".total_product_in_cart_amount").each(function () {
-            total_order_amount +=  parseInt($(this).text);
-    });
-        console.log(total_order_amount)
-    }
 
-    carculatingBasketAmount();
 
     function basketUpdate(product_id,qty, is_delete) {
         var data ={};
@@ -77,6 +69,15 @@ $(document).ready(function() {
         product_id = $(this).data("product_id");
         basketUpdate(product_id,qty, is_delete=true)
 
-    })
+    });
 
+    function carculatingBasketAmount() {
+        var total_order_amount = 0;
+        $('.total_product_in_cart_amount').each(function () {
+            total_order_amount +=  parseFloat($(this).text());
+    });
+        console.log(total_order_amount)
+    }
+
+    carculatingBasketAmount();
 });
