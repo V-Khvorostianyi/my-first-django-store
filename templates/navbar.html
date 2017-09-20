@@ -51,11 +51,11 @@
                           <li class="text-center">{{ item.product.name }}, qty:{{ item.qty }},<br> total price:{{ item.total_price }}
                           <a href="" id="id-delete_item" class="delete_item" data-product_id = "{{ item.id }}" >x</a>
                           </li>
-                          <li role="separator" class="divider"></li>
+                          <li class="divider"></li>
                       {% endfor %}
                     <li>
                         <div class="text-center">
-                            <button class="btn btn-success">Go to Card</button>
+                            <a href="{% url 'checkout'%}">Go to Card</a>
                         </div>
                     </li>
                   </ul>
