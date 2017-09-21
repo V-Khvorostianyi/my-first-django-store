@@ -39,4 +39,6 @@ def basket_adding(request):
 def checkout(request):
     session_key = request.session.session_key
     product_in_card = ProductInCard.objects.filter(session_key=session_key,is_active = True)
+    if (request.POST):
+        print(request.POST)
     return render(request, 'orders/checkout.html', locals())
