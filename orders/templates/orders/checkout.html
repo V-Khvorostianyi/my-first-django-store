@@ -12,11 +12,11 @@
                     <form class="form-inline" method="post">{% csrf_token %}
                         <div class="form-group">
                             <label>User name </label>
-                            <input type="text" name ="user_name" placeholder=" enter your name">
+                            <input type="text" name ="{{ form.name.html_name }}" placeholder=" enter your name">
                         </div>
                         <div class="form-group">
                             <label>User phone</label>
-                            <input type="text" name ="user_phone" placeholder=" and your phone, please">
+                            <input type="text" name ="{{ form.phones.html_name }}" placeholder=" and your phone, please">
                         </div>
                         <table class="table text-left">
                             <thead align="right">
