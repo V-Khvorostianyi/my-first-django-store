@@ -9,19 +9,19 @@
                     <h3 class="text-center">Products in Cart</h3>
                     <h5 class="text-center">Total: {{ request.session.basket.total_price }} грн </h5>
                             {{ request.session.basket.products }}
-                    <form class="form-horisontal" method="post">{% csrf_token %}
+                    <form class="form-inline" method="post">{% csrf_token %}
                         <div class="form-group">
-                            <label>Name</label>
+                            <label>User name </label>
                             <input type="text" name ="user_name" placeholder=" enter your name">
                         </div>
                         <div class="form-group">
-                            <label>Phone</label>
+                            <label>User phone</label>
                             <input type="text" name ="user_phone" placeholder=" and your phone, please">
                         </div>
                         <table class="table text-left">
                             <thead align="right">
                                 <tr>
-                                    <th>Name</th>
+                                    <th>Name of product</th>
                                     <th>Qty</th>
                                     <th>Price per item</th>
                                     <th>Total price</th>
