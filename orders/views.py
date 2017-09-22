@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from .models import *
+from .forms import *
 # Create your views here.
 def basket_adding(request):
     return_dict = dict()
@@ -40,5 +41,6 @@ def checkout(request):
     session_key = request.session.session_key
     product_in_card = ProductInCard.objects.filter(session_key=session_key,is_active = True)
     if (request.POST):
+        form = CheckoutContactForm(request.POST or None)
         print(request.POST)
     return render(request, 'orders/checkout.html', locals())
