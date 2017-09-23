@@ -44,10 +44,15 @@ def checkout(request):
     if (request.POST):
         form = CheckoutContactForm(request.POST or None)
         if (form.is_valid()):
+            print(request.POST)
             print("yes")
             data = request.POST
             phone = data["phone"]
             name = data.get["name",'noname']
             user, created = User.objects.get_or_create(username = phone, default={"first_name":name})
-
+            #
+            # for item in data:
+            #     if item.startwith("")
+        else:
+            print("no")
     return render(request, 'orders/checkout.html', locals())
