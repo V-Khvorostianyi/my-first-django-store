@@ -41,16 +41,16 @@ def basket_adding(request):
 def checkout(request):
     session_key = request.session.session_key
     product_in_card = ProductInCard.objects.filter(session_key=session_key,is_active = True)
+    form = CheckoutContactForm(request.POST or None)
     if (request.POST):
-        form = CheckoutContactForm(request.POST or None)
+        print(request.POST)
         if (form.is_valid()):
-            print(request.POST)
             print("yes")
             data = request.POST
-            phone = data["phone"]
-            name = data.get["name",'noname']
+            phone = data['phones']
+            name = data["name"]
             user, created = User.objects.get_or_create(username = phone, default={"first_name":name})
-            #
+
             # for item in data:
             #     if item.startwith("")
         else:
