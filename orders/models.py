@@ -18,7 +18,7 @@ class Status(models.Model):
         verbose_name_plural = 'Statuses of order'
 
 class Order(models.Model):
-    user = models.ForeignKey(User, blank=True,default=False)
+    user = models.ForeignKey(User, blank=True,null = True,default=None)
     total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     costomer_name = models.CharField(max_length=200, blank=True, default=None)
     custormer_email = models.EmailField(blank=True, default=None)
