@@ -48,8 +48,8 @@ def checkout(request):
             print("yes")
             data = request.POST
             phone = data['phones']
-            name = data["name"]
-            user, created = User.objects.get_or_create(username = phone, default={"first_name":name})
+            name = data['name']
+            user, created = User.objects.get_or_create(username = phone, defaults={"first_name":name})
 
             # for item in data:
             #     if item.startwith("")
