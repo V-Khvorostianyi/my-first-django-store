@@ -51,8 +51,11 @@ def checkout(request):
             name = data['name']
             user, created = User.objects.get_or_create(username = phone, defaults={"first_name":name})
 
-            # for item in data:
-            #     if item.startwith("")
+            for name, value in data.items():
+                if name.startswith("product_in_cart_"):
+                    id  = name.split("product_in_cart_")
+                    print(id)
+
         else:
             print("no")
     return render(request, 'orders/checkout.html', locals())
