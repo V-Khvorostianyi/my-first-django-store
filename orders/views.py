@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, JsonResponse
+from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
 from .models import *
 from .forms import *
 from  django.contrib.auth.models import User
@@ -40,7 +40,7 @@ def basket_adding(request):
 
 def checkout(request):
     session_key = request.session.session_key
-    product_in_card = ProductInCard.objects.filter(session_key=session_key,is_active = True)
+    product_in_cart = ProductInCard.objects.filter(session_key=session_key, is_active=True)#, order__isnull=True)
     form = CheckoutContactForm(request.POST or None)
     if (request.POST):
         print(request.POST)
@@ -61,13 +61,15 @@ def checkout(request):
                     product_in_cart_id  = name.split("product_in_cart_")[1]
                     product_in_cart = ProductInCard.objects.get(id=product_in_cart_id)
                     product_in_cart.qty = value
+                    product_in_cart.order = order
                     product_in_cart.save(force_update=True)
+
                     ProductInOrder.objects.create(product=product_in_cart.product,
                                                   qty = product_in_cart.qty,
                                                   price =product_in_cart.price,
                                                   total_price = product_in_cart.total_price,
                                                   order=order)
-
+            return HttpResponseRedirect(request.META['HTTP_REFERER'])
         else:
             print("no")
     return render(request, 'orders/checkout.html', locals())
