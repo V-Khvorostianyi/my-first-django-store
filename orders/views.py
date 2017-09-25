@@ -54,8 +54,7 @@ def checkout(request):
             order = Order.objects.create(user=user,
                                          costomer_name = name,
                                          customer_phone = phone,
-                                         status_id = 1,
-                                         costomer_email = "unknown")
+                                         status_id = 1)
 
             for name, value in data.items():
                 if name.startswith("product_in_cart_"):
