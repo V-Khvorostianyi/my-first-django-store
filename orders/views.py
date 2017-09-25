@@ -62,7 +62,8 @@ def checkout(request):
                     ProductInOrder.objects.create(product=product_in_cart.product,
                                                   qty = product_in_cart.qty,
                                                   price =product_in_cart.price,
-                                                  total_price = product_in_cart.total_price)
+                                                  total_price = product_in_cart.total_price,
+                                                  order=order)
 
         else:
             print("no")
