@@ -51,10 +51,18 @@ def checkout(request):
             name = data['name']
             user, created = User.objects.get_or_create(username = phone, defaults={"first_name":name})
 
+            order = Order.objects.create(user=user, name = name, phone = phone, status_id = 1)
+
             for name, value in data.items():
                 if name.startswith("product_in_cart_"):
-                    id  = name.split("product_in_cart_")
-                    print(id)
+                    product_in_cart_id  = name.split("product_in_cart_")[1]
+                    product_in_cart = ProductInCard.objects.get(id=product_in_cart_id)
+                    product_in_cart.qty = value
+                    product_in_cart.save(force_update=True)
+                    ProductInOrder.objects.create(product=product_in_cart.product,
+                                                  qty = product_in_cart.qty,
+                                                  price =product_in_cart.price,
+                                                  total_price = product_in_cart.total_price)
 
         else:
             print("no")
