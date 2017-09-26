@@ -1,6 +1,8 @@
 from django.db import models
 from products.models import Product
 from django.db.models.signals import post_save
+from  django.contrib.auth.models import User
+from utils.main import disable_for_loaddata
 
 
 class Status(models.Model):
@@ -17,9 +19,10 @@ class Status(models.Model):
         verbose_name_plural = 'Statuses of order'
 
 class Order(models.Model):
+    user = models.ForeignKey(User, blank=True,null = True,default=None)
     total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     costomer_name = models.CharField(max_length=200, blank=True, default=None)
-    custormer_email = models.EmailField(blank=True, default=None)
+    custormer_email = models.EmailField(blank=True, null = True,default=None)
     customer_phone = models.CharField(max_length=48, blank=True, default=None)
     customer_address = models.CharField(max_length=128, null = True, blank=True, default=None)
     comments = models.TextField(max_length=200, blank=True, null = True, default = None)
@@ -62,10 +65,11 @@ class ProductInOrder(models.Model):
     def save(self, *args, **kwargs):
 
         self.price = self.product.price
-        self.total_price = self.qty * self.price
+        self.total_price = int(self.qty) * self.price
 
         super(ProductInOrder, self).save(*args, **kwargs)
 
+@disable_for_loaddata
 def product_post_save(sender, instance, **kwargs):
 
     order = instance.order
@@ -100,8 +104,7 @@ class ProductInCard(models.Model):
 
     def save(self, *args, **kwargs):
 
-        price = self.product.price
-        self.price = price
+        self.price = self.product.price
         self.total_price = int(self.qty) * self.price
 
         super(ProductInCard, self).save(*args, **kwargs)

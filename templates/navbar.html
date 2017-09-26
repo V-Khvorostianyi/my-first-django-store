@@ -35,21 +35,29 @@
 
           <ul class="nav navbar-nav navbar-right basket">
               <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cart<span id="card_total_orders">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                      Cart
+                      <span id="card_total_orders">
                       {% if products_total_nmb  %}
                           ({{ products_total_nmb }})
                       {% else %}
                           (0)
                       {% endif %}
-                    </span><span class="caret"></span></a>
+                    </span><span class="caret"></span>
+                  </a>
 
                   <ul class="dropdown-menu basket-item">
                       {% for item in products_in_basket %}
-                          <li>{{ item.product.name }}, qty:{{ item.qty }}, total price:{{ item.total_price }}
+                          <li class="text-center">{{ item.product.name }}, qty:{{ item.qty }},<br> total price:{{ item.total_price }}
                           <a href="" id="id-delete_item" class="delete_item" data-product_id = "{{ item.id }}" >x</a>
                           </li>
+                          <li class="divider"></li>
                       {% endfor %}
-
+                    <li>
+                        <div class="text-center">
+                            <a href="{% url 'checkout'%}">Go to Card</a>
+                        </div>
+                    </li>
                   </ul>
               </li>
           </ul>

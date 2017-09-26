@@ -4,7 +4,6 @@ $(document).ready(function() {
     form = $('#form_buying_product');
     console.log(form);
 
-
     function basketUpdate(product_id,qty, is_delete) {
         var data ={};
         data.product_id = product_id;
@@ -34,7 +33,14 @@ $(document).ready(function() {
                         $('.basket-item').append('<li>'+value.name+', qty: ' + value.qty +', '
                         +'total price: '+value.total_price+'UAH'
                         +'<a href="" id="id-delete_item" class="delete_item"  data-product_id = "'+value.id+'" >x</a>'
-                        +'</li>');
+                        +'</li>'
+                        // +'<li class="divider">'+'</li>'
+                        // +'<li>\n' +
+                        //     ' <div class="text-center">\n' +
+                        //     '        <a href="{% url \'checkout\'%}">Go to Card</a>\n' +
+                        //     '  </div>\n' +
+                        // '</li>'
+                        );
                     });
                 //ok
                 }
@@ -76,7 +82,7 @@ $(document).ready(function() {
         $('.total_product_in_cart_amount').each(function () {
             total_order_amount +=  parseFloat($(this).text());
     });
-        total_order_amount = total_order_amount.toFixed(2);
+        total_order_amount = total_order_amount;
         $('.total_order_amount').text(total_order_amount+"UAH");
     };
 
@@ -95,4 +101,8 @@ $(document).ready(function() {
     });
 
     carculatingBasketAmount();
+
 });
+
+
+

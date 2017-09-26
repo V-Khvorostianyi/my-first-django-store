@@ -2,22 +2,26 @@
 {% extends "base.html" %}
 {% load staticfiles  %}
 {% block content %}
+
+    {% if products_in_basket %}
         <div class="container">
             <div class="row">
                 <div class="col-md-8-offset-2">
                     <h1 class="text-center">Your Cart</h1>
                     <h3 class="text-center">Products in Cart</h3>
-                    <h5 class="text-center">Total: {{ request.session.basket.total_price }} грн </h5>
-                            {{ request.session.basket.products }}
-{#                    <p>Total cost: {{ product_in_card.product.total_price }}</p>#}
-{#                        {% for item in product_in_card %}#}
-{#                            {{ item.product.name }}#}
-{#                        {% endfor %}#}
-                    <form>
+                    <form class="form-inline checkout-form" method="post">{% csrf_token %}
+                        <div class="form-group">
+                            <label>User name </label>
+                            <input type="text" name ="{{ form.name.html_name }}" placeholder=" enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label>User phone</label>
+                            <input type="text" name ="{{ form.phones.html_name }}" placeholder=" and your phone, please">
+                        </div>
                         <table class="table text-left">
                             <thead align="right">
                                 <tr>
-                                    <th>Name</th>
+                                    <th>Name of product</th>
                                     <th>Qty</th>
                                     <th>Price per item</th>
                                     <th>Total price</th>
@@ -54,20 +58,17 @@
                             </span>
                         </div>
                         <div class="text-left">
-                            <button type="submit" class="btn btn-primary btn-lg">
+                            <button type="submit" class="btn btn-primary btn-lg make-order-btn"
+                            data-set_not_active = {{ product_in_cart.is_active }}>
                                 Make an order
                             </button>
                         </div>
                     </form>
                 </div>
-
-                <div class="col-md-12">
-
-                </div>
+             {% else %}
+                <h3 class="text-center">There are no product in your cart</h3>
+            {% endif %}
             </div>
         </div>
-
-
-
 {% endblock content %}
 
