@@ -4,7 +4,6 @@ $(document).ready(function() {
     form = $('#form_buying_product');
     console.log(form);
 
-
     function basketUpdate(product_id,qty, is_delete) {
         var data ={};
         data.product_id = product_id;
@@ -102,4 +101,8 @@ $(document).ready(function() {
     });
 
     carculatingBasketAmount();
+
 });
+
+
+

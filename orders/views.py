@@ -26,13 +26,13 @@ def basket_adding(request):
             new_product.qty +=int(qty)
             new_product.save(force_update=True)
 
-    products_in_card = ProductInCard.objects.filter(session_key=session_key, is_active=True)#, order__isnull=True)
-    products_total_qty = products_in_card.count()
+    products_in_cart = ProductInCard.objects.filter(session_key=session_key, is_active=True, order__isnull=True)
+    products_total_qty = products_in_cart.count()
     return_dict["products_total_qty"] = products_total_qty
 
     return_dict["products"] = list()
 
-    for item in products_in_card:
+    for item in products_in_cart:
         product_dict = dict()
         product_dict["name"] = item.product.name
         product_dict["id"] = item.id
@@ -43,7 +43,7 @@ def basket_adding(request):
 
 def checkout(request):
     session_key = request.session.session_key
-    product_in_cart = ProductInCard.objects.filter(session_key=session_key, is_active=True)#, order__isnull=True)
+    product_in_cart = ProductInCard.objects.filter(session_key=session_key, is_active=True, order__isnull=True)
     form = CheckoutContactForm(request.POST or None)
     if (request.POST):
         print(request.POST)
@@ -72,6 +72,7 @@ def checkout(request):
                                                   price =product_in_cart.price,
                                                   total_price = product_in_cart.total_price,
                                                   order=order)
+
             return HttpResponseRedirect(request.META['HTTP_REFERER'])
         else:
             print("no")
