@@ -1,10 +1,9 @@
 from django import forms
-from orders.models import *
 
 
-class SetQtyProductForm(forms.ModelForm):
-	class Meta:
-		model = Order
-		exclude = [""]
+
+class SetQtyProductForm(forms.Form):
+	name = forms.IntegerField(required=True)
+
 
 
