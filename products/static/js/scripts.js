@@ -3,6 +3,37 @@ $(document).ready(function() {
     var form;
     form = $('#form_buying_product');
     console.log(form);
+    function sendNotification(title, options) {
+        // Проверим, поддерживает ли браузер HTML5 Notifications
+        if (!("Notification" in window)) {
+        alert('Ваш браузер не поддерживает HTML Notifications, его необходимо обновить.');
+        }
+
+        // Проверим, есть ли права на отправку уведомлений
+        else if (Notification.permission === "granted") {
+        // Если права есть, отправим уведомление
+        var notification = new Notification(title, options);
+
+        function clickFunc() { alert('Пользователь кликнул на уведомление'); }
+
+        notification.onclick = clickFunc;
+        }
+
+        // Если прав нет, пытаемся их получить
+        else if (Notification.permission !== 'denied') {
+        Notification.requestPermission(function (permission) {
+        // Если права успешно получены, отправляем уведомление
+        if (permission === "granted") {
+        var notification = new Notification(title, options);
+
+        } else {
+        alert('Вы запретили показывать уведомления'); // Юзер отклонил наш запрос на показ уведомлений
+        }
+        });
+        } else {
+        // Пользователь ранее отклонил наш запрос на показ уведомлений
+        // В этом месте мы можем, но не будем его беспокоить. Уважайте решения своих пользователей.
+        }
 
     function basketUpdate(product_id,qty, is_delete) {
         var data ={};
@@ -23,6 +54,10 @@ $(document).ready(function() {
             data : data,
             cache :true,
             success:function (data) {
+                $("#form_buying_product")[0].reset();
+                sendNotification('Added to cart', {
+                    body: 'If you want to finish your order, please go to cart ',
+                    });
                 console.log('OK');
                 console.log(data.products_total_qty);
                 if (data.products_total_qty || data.products_total_qty==0 ) {
@@ -34,20 +69,23 @@ $(document).ready(function() {
                         +'total price: '+value.total_price+'UAH'
                         +'<a href="" id="id-delete_item" class="delete_item"  data-product_id = "'+value.id+'" >x</a>'
                         +'</li>'
-                        // +'<li class="divider">'+'</li>'
-                        // +'<li>\n' +
-                        //     ' <div class="text-center">\n' +
-                        //     '        <a href="{% url \'checkout\'%}">Go to Card</a>\n' +
-                        //     '  </div>\n' +
-                        // '</li>'
+                        +'<li class="divider">'+'</li>'
+
                         );
+                        $('.basket-item').text(+'<li>\n' +
+                            ' <div class="text-center">\n' +
+                            '        <a href="{% url \'checkout\'%}">Go to Card</a>\n' +
+                            '  </div>\n' +
+                        '</li>');
                     });
                 //ok
+
                 }
             },
             error:function () {
                 console.log('error');
             }
+
         });
 
 
