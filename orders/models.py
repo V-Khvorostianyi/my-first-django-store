@@ -3,10 +3,6 @@ from products.models import Product
 from django.db.models.signals import post_save
 from  django.contrib.auth.models import User
 from utils.main import disable_for_loaddata
-import zeep
-
-wsdl = 'https://dr-hml.neurotech.com.br/services/soap/porting?wsdl'
-zeep.Client(wsdl=wsdl)
 
 
 class Status(models.Model):
