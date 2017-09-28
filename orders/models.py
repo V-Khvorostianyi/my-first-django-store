@@ -3,6 +3,10 @@ from products.models import Product
 from django.db.models.signals import post_save
 from  django.contrib.auth.models import User
 from utils.main import disable_for_loaddata
+import zeep
+
+wsdl = 'https://dr-hml.neurotech.com.br/services/soap/porting?wsdl'
+zeep.Client(wsdl=wsdl)
 
 
 class Status(models.Model):
@@ -64,7 +68,7 @@ class ProductInOrder(models.Model):
 
     def save(self, *args, **kwargs):
 
-        self.price = self.product.price
+        self.price = self.product.price_per_item
         self.total_price = int(self.qty) * self.price
 
         super(ProductInOrder, self).save(*args, **kwargs)
@@ -104,7 +108,7 @@ class ProductInCard(models.Model):
 
     def save(self, *args, **kwargs):
 
-        self.price = self.product.price
+        self.price = self.product.price_per_item
         self.total_price = int(self.qty) * self.price
 
         super(ProductInCard, self).save(*args, **kwargs)

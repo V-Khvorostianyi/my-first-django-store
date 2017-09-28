@@ -15,7 +15,7 @@ class Product(models.Model):
     name = models.CharField(max_length=64, blank=True, default=None)
     category = models.ForeignKey(ProductCategory,blank=True, null = True, default = None)
     discount = models.IntegerField(default=0)
-    price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    price_per_item = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     short_description = models.TextField(max_length=200, blank=True, null = True, default = None)
     description = models.TextField(max_length=200, blank=True, null = True, default = None)
     is_active = models.BooleanField(default=True)
