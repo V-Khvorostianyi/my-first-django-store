@@ -16,7 +16,7 @@
                 <h1>
                     {{ product.name }}
                 </h1>
-                <p>Price: {{ product.price }}UAH</p>
+                <p>Price: {{ product.price_per_item}}UAH</p>
                 <div>
                   <!-- Nav tabs -->
                   <ul class="nav nav-tabs" role="tablist">
@@ -42,7 +42,7 @@
                         <button type="submit" class="btn btn-success btn-buy" id="submit-btn"
                                 data-product_id = '{{ product_id }}'
                                 data-name = '{{ product.name }}'
-                                data-price = '{{ product.price }}'
+                                data-price = '{{ product.price_per_item }}'
                         >
                             Buy
                         </button>
