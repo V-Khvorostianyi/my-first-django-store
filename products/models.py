@@ -24,7 +24,7 @@ class Product(models.Model):
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __str__(self):
-        return "%s %s" % (self.name, self.price)
+        return "%s %s" % (self.name, self.price_per_item)
 
     class Meta:
         verbose_name = 'Product'
