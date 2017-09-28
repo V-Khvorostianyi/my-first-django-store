@@ -44,13 +44,11 @@ $(document).ready(function() {
                         +'<a href="" id="id-delete_item" class="delete_item"  data-product_id = "'+value.id+'" >x</a>'
                         +'</li>'
                         +'<li class="divider">'+'</li>'
-
+                        +'<div class="text-center">'
+                        +"<a href='/checkout/'>Go to Cart</a>"
+                        +'</div>'
                         );
-                        $('.basket-item').text(+'<li>\n' +
-                            ' <div class="text-center">\n' +
-                            '        <a href="">Go to Card</a>\n' +
-                            '  </div>\n' +
-                        '</li>');
+
                     });
                 //ok
 
