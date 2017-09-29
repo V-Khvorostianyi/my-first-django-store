@@ -1,9 +1,9 @@
 
 $(document).ready(function() {
+
     var form;
     form = $('#form_buying_product');
     console.log(form);
-
     function basketUpdate(product_id,qty, is_delete) {
         var data ={};
         data.product_id = product_id;
@@ -13,6 +13,15 @@ $(document).ready(function() {
 
         if (is_delete){
             data["is_delete"] = true;
+        }
+        if (qty<1){
+            return Notification.requestPermission( newMessage );
+
+                function newMessage(permission) {
+                    if( permission != "granted" ) return false;
+                    var notify = new Notification("You entered invalid value");
+                };
+
         }
 
         var url = form.attr('action');
@@ -75,7 +84,7 @@ $(document).ready(function() {
         // console.log(name);
         // console.log(product_id);
         // console.log(product_price);
-        basketUpdate(product_id,qty, is_delete=false)
+            basketUpdate(product_id, qty, is_delete = false)
 
     });
     $(document).on('click','.delete_item', function (e) {
