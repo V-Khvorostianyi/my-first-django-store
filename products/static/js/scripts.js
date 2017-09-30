@@ -14,15 +14,16 @@ $(document).ready(function() {
         if (is_delete){
             data["is_delete"] = true;
         }
-        if (qty<1){
-            return Notification.requestPermission( newMessage );
+        // if (qty<1) {
+        //     return Notification.requestPermission(newMessage);
+        //
+        //     function newMessage(permission) {
+        //         if (permission != "granted") return false;
+        //         var notify = new Notification("You entered invalid value");
+        //     }
+        // };
 
-                function newMessage(permission) {
-                    if( permission != "granted" ) return false;
-                    var notify = new Notification("You entered invalid value");
-                };
 
-        }
 
         var url = form.attr('action');
         console.log(data)
