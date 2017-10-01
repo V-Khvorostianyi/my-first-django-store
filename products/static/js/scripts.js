@@ -1,6 +1,11 @@
 
 $(document).ready(function() {
+    //this is modal test area
+    $('#myModal').on('shown.bs.modal', function () {
+  $('#submit-btn').focus()
+})
 
+    //the end of test area
     var form;
     form = $('#form_buying_product');
     console.log(form);
@@ -33,14 +38,14 @@ $(document).ready(function() {
             data : data,
             cache :true,
             success:function (data) {
-                $("#form_buying_product")[0].reset();
-                Notification.requestPermission( newMessage );
-
-                function newMessage(permission) {
-                    if( permission != "granted" ) return false;
-                    var notify = new Notification("Product was added to cart");
-                };
-
+                // $("#form_buying_product")[0].reset();
+                // Notification.requestPermission( newMessage );
+                //
+                // function newMessage(permission) {
+                //     if( permission != "granted" ) return false;
+                //     var notify = new Notification("Product was added to cart");
+                // };
+                //
 
                 console.log('OK');
                 console.log(data.products_total_qty);
