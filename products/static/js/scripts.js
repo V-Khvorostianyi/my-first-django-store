@@ -1,6 +1,8 @@
 
 $(document).ready(function() {
+    //this is modal test area
 
+    //the end of test area
     var form;
     form = $('#form_buying_product');
     console.log(form);
@@ -14,16 +16,6 @@ $(document).ready(function() {
         if (is_delete){
             data["is_delete"] = true;
         }
-        // if (qty<1) {
-        //     return Notification.requestPermission(newMessage);
-        //
-        //     function newMessage(permission) {
-        //         if (permission != "granted") return false;
-        //         var notify = new Notification("You entered invalid value");
-        //     }
-        // };
-
-
 
         var url = form.attr('action');
         console.log(data)
@@ -34,14 +26,6 @@ $(document).ready(function() {
             cache :true,
             success:function (data) {
                 $("#form_buying_product")[0].reset();
-                Notification.requestPermission( newMessage );
-
-                function newMessage(permission) {
-                    if( permission != "granted" ) return false;
-                    var notify = new Notification("Product was added to cart");
-                };
-
-
                 console.log('OK');
                 console.log(data.products_total_qty);
                 if (data.products_total_qty || data.products_total_qty==0 ) {
@@ -61,6 +45,8 @@ $(document).ready(function() {
                 $('.basket-item').append("<a href='/checkout/'>Go to Cart</a>"
                         +'</div>')
                 }
+
+
             },
             error:function () {
                 console.log('error');
