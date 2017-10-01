@@ -55,13 +55,11 @@ $(document).ready(function() {
                         +'</li>'
                         +'<li class="divider">'+'</li>'
                         +'<div class="text-center">'
-                        +"<a href='/checkout/'>Go to Cart</a>"
-                        +'</div>'
                         );
-
                     });
                 //ok
-
+                $('.basket-item').append("<a href='/checkout/'>Go to Cart</a>"
+                        +'</div>')
                 }
             },
             error:function () {
