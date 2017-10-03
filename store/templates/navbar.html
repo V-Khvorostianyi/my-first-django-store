@@ -51,6 +51,7 @@
                   </a>
 
                   <ul class="dropdown-menu basket-item text-left">
+                          <li class="divider"></li>
                       {% for item in products_in_basket %}
                           <li class="text-center">{{ item.product.name }}, qty:{{ item.qty }},<br> total price:{{ item.total_price }}
                           <a href="" id="id-delete_item" class="delete_item" data-product_id = "{{ item.id }}" >x</a>
