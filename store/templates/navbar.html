@@ -35,8 +35,8 @@
 
           <ul class="nav navbar-nav navbar-right basket">
               <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                      <img src="{% static 'media/cart.png' %}" class="img-responsive  img-cart">
+                  <a href="#" class="dropdown-toggle cart-img-in-navbar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                      <img src="{% static 'media/cart.png' %}" class="img-responsive img-cart">
                       <span id="card_total_orders">
                       {% if products_total_nmb  %}
                           ({{ products_total_nmb }})
