@@ -36,9 +36,9 @@
 
 {#        </div><!--/.nav-collapse -->#}
       </div>
-        <div class="container">
-          <ul class="nav navbar-nav navbar-right basket">
-              <li class="dropdown">
+
+          <ul class="nav navbar-nav  basket">
+              <li class="dropdown text-center">
                   <a href="#" class="dropdown-toggle cart-img-in-navbar" data-toggle="dropdown" role="button" aria-expanded="false">
                       <img src="{% static 'media/cart.png' %}" class="img-responsive img-cart">
                       <span id="card_total_orders">
@@ -50,7 +50,7 @@
                     </span><span class="caret"></span>
                   </a>
 
-                  <ul class="dropdown-menu basket-item">
+                  <ul class="dropdown-menu basket-item text-left">
                       {% for item in products_in_basket %}
                           <li class="text-center">{{ item.product.name }}, qty:{{ item.qty }},<br> total price:{{ item.total_price }}
                           <a href="" id="id-delete_item" class="delete_item" data-product_id = "{{ item.id }}" >x</a>
@@ -63,5 +63,5 @@
                   </ul>
               </li>
           </ul>
-        </div>
+
     </nav>
