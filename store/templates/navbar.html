@@ -5,9 +5,9 @@
     </nav>
 
     <nav class="navbar navbar-default navbar-static-top navbar-main">
-      <div class="container">
+      <div class="container nav-sandwich">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <button type="button" class="navbar-toggle collapsed sandwich" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -15,7 +15,7 @@
           </button>
           <a class="navbar-brand" href="{% url 'home'%}">MyStore</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+        <div id="navbar" class="navbar-collapse collapse sandwich">
           <ul class="nav navbar-nav home-navbar">
             <li><a href="{% url 'home'%}">Home</a></li>
             <li><a href="#">Contact</a></li>
@@ -32,10 +32,14 @@
               </ul>
             </li>
           </ul>
+        </div>
 
+{#        </div><!--/.nav-collapse -->#}
+      </div>
+        <div class="container">
           <ul class="nav navbar-nav navbar-right basket">
               <li class="dropdown">
-                  <a href="#" class="dropdown-toggle cart-img-in-navbar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <a href="#" class="dropdown-toggle cart-img-in-navbar" data-toggle="dropdown" role="button" aria-expanded="false">
                       <img src="{% static 'media/cart.png' %}" class="img-responsive img-cart">
                       <span id="card_total_orders">
                       {% if products_total_nmb  %}
@@ -58,8 +62,6 @@
                       </div>
                   </ul>
               </li>
-
           </ul>
-        </div><!--/.nav-collapse -->
-      </div>
+        </div>
     </nav>
