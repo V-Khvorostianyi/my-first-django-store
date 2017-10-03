@@ -1,8 +1,17 @@
 
 $(document).ready(function() {
     //this is modal test area
+    var number = document.getElementById('number');
 
-    //the end of test area
+    // Listen for input event on numInput.
+    number.onkeydown = function(e) {
+        if(!((e.keyCode > 95 && e.keyCode < 106)
+          || (e.keyCode > 47 && e.keyCode < 58)
+          || e.keyCode == 8)) {
+            return false;
+        }
+    }
+
     var form;
     form = $('#form_buying_product');
     console.log(form);
