@@ -105,7 +105,8 @@ padding-bottom: 120px;
 
 .basket {
 	/*padding-left: 17%;*/
-	width: 90px;
+	width: 200px;
+	min-width: 200px;
 	float: right;
 	display: inline-block;
 	margin: 0;
