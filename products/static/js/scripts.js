@@ -1,7 +1,19 @@
 
 $(document).ready(function() {
     //this is modal test area
+    //
+    // $('#myModal').modal('toggle')
 
+    var number = document.getElementById('number');
+
+    // Listen for input event on numInput.
+    number.onkeydown = function(e) {
+        if(!((e.keyCode > 95 && e.keyCode < 106)
+          || (e.keyCode > 47 && e.keyCode < 58)
+          || e.keyCode == 8)) {
+            return false;
+        }
+    }
     //the end of test area
     var form;
     form = $('#form_buying_product');
@@ -13,10 +25,9 @@ $(document).ready(function() {
         var csrf_token = $('#form_buying_product [name="csrfmiddlewaretoken"]').val();
         data["csrfmiddlewaretoken"] = csrf_token;
 
-        if (is_delete){
-            data["is_delete"] = true;
-        }
-
+            if (is_delete) {
+                data["is_delete"] = true;
+            }
         var url = form.attr('action');
         console.log(data)
         $.ajax({
@@ -47,6 +58,7 @@ $(document).ready(function() {
                 }
 
 
+
             },
             error:function () {
                 console.log('error');
@@ -66,6 +78,9 @@ $(document).ready(function() {
         var name = submit_btn.data('name');
         var product_id = submit_btn.data('product_id');
         var product_price = submit_btn.data('price');
+        if (qty>0) {
+            $('#myModal').modal('show');
+        }
         // console.log(name);
         // console.log(product_id);
         // console.log(product_price);
