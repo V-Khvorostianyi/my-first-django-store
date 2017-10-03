@@ -1,6 +1,9 @@
 
 $(document).ready(function() {
     //this is modal test area
+    //
+    // $('#myModal').modal('toggle')
+
     var number = document.getElementById('number');
 
     // Listen for input event on numInput.
@@ -11,7 +14,7 @@ $(document).ready(function() {
             return false;
         }
     }
-
+    //the end of test area
     var form;
     form = $('#form_buying_product');
     console.log(form);
@@ -55,6 +58,7 @@ $(document).ready(function() {
                 }
 
 
+
             },
             error:function () {
                 console.log('error');
@@ -74,6 +78,9 @@ $(document).ready(function() {
         var name = submit_btn.data('name');
         var product_id = submit_btn.data('product_id');
         var product_price = submit_btn.data('price');
+        if (qty>0) {
+            $('#myModal').modal('show');
+        }
         // console.log(name);
         // console.log(product_id);
         // console.log(product_price);
