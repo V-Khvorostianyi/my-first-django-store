@@ -1,7 +1,10 @@
 
 $(document).ready(function() {
     //this is modal test area
-    //
+    function one() {
+      return 1;
+    }
+
     // $('#myModal').modal('toggle')
 
     var number = document.getElementById('number');
@@ -120,6 +123,14 @@ $(document).ready(function() {
     });
 
     carculatingBasketAmount();
+
+    $('.add-to-cart-input').onClick(function (e) {
+    e.preventDefault();
+        qty = 0;
+        product_id = $(this).data("product_id");
+        basketUpdate(product_id,qty=1, is_delete=false)
+
+    });
 
 });
 
