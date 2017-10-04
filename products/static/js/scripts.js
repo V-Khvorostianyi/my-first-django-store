@@ -87,7 +87,7 @@ $(document).ready(function() {
         // console.log(name);
         // console.log(product_id);
         // console.log(product_price);
-            basketUpdate(product_id, qty, is_delete = false)
+        basketUpdate(product_id, qty, is_delete = false)
 
     });
     $(document).on('click','.delete_item', function (e) {
@@ -123,14 +123,6 @@ $(document).ready(function() {
     });
 
     carculatingBasketAmount();
-
-    $('.add-to-cart-input').onClick(function (e) {
-    e.preventDefault();
-        qty = 0;
-        product_id = $(this).data("product_id");
-        basketUpdate(product_id,qty=1, is_delete=false)
-
-    });
 
 });
 

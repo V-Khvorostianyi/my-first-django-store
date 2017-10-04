@@ -32,8 +32,8 @@ body,html {
 }
 
 .img-edit {
-	/*height: 200px;*/
-	/*width: 300px;*/
+	height: 200px;
+	width: 300px;
 	margin-right: auto;
 	margin-left: auto;
 }

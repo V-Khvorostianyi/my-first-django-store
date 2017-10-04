@@ -13,12 +13,9 @@
         <h4>{{ item.product.name }}</h4>
         <p>{{ item.product.short_description|truncatechars_html:40 }}</p>
         <div> Price {{ item.product.price_per_item }}UAH</div>
+
         <div class="add-to-card-btn ">
-            <form action="">
-            <input type="button" value="Add to card"
-                   onclick=""
-                   class="btn btn-success add-to-cart-input">
-            </form>
+            <button class="btn btn-success">Add to card</button>
         </div>
     </div>
 </div>
