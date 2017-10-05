@@ -158,7 +158,7 @@ $(document).ready(function() {
     $(document).on('change', ".product-in-basket-qty", function(){
         var current_nmb = $(this).val();
         console.log(current_nmb);
-        var number = document.getElementById("check-num")
+        // var number = document.getElementById("check-num")
             // number.onkeydown = function(e) {
             // if(!((e.keyCode > 95 && e.keyCode < 106)
             //   || (e.keyCode > 47 && e.keyCode < 58)
