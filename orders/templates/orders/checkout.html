@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-md-8-offset-2">
                     <h1 class="text-center">Your Cart</h1>
-                    {{ request.session.basket.total_amount }} грн
+                    {{ request.session.basket.total_amount }}
                             {{ request.session.basket.products }}
 
                     <form class="form-inline checkout-form text-center" method="post">{% csrf_token %}
@@ -65,7 +65,7 @@
                         </div>
                         <div class="text-left">
                             <button type="submit" class="btn btn-primary btn-lg make-order-btn"
-                            data-set_not_active = {{ product_in_cart.is_active }}>
+                            data-set_not_active = {{ product_in_card.is_active }}>
                                 Make an order
                             </button>
                         </div>
