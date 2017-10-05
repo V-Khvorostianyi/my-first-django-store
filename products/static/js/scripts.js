@@ -118,6 +118,6 @@ $(document).ready(function() {
         carculatingBasketAmount();
     });
 
-    carculatingBasketAmount();
+    carculatingBasketAmount();//
 
 });
