@@ -1,13 +1,8 @@
 
 $(document).ready(function() {
-    //this is modal test area
-    function one() {
-      return 1;
-    }
 
-    // $('#myModal').modal('toggle')
 
-    var number = document.getElementById('number');
+    var number = document.getElementById('check-num');
 
     // Listen for input event on numInput.
     number.onkeydown = function(e) {
