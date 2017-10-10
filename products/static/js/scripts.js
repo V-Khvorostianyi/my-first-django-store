@@ -2,8 +2,8 @@ $(document).ready(function() {
     //this is modal test area
     //
     // $('#myModal').modal('toggle')
-
-    var number = document.getElementById('number');
+    // var one =1;
+    // var number = document.getElementById('number');
 
     // // Listen for input event on numInput.
     // number.onkeydown = function(e) {
@@ -14,14 +14,15 @@ $(document).ready(function() {
     //     }
     // }
     // //the end of test area
-    var form;
-    form = $('#form_buying_product');
+    var form = $('#form_buying_product');
+    var csrf_token = $('#form_buying_product [name="csrfmiddlewaretoken"]').val();
+    console.log(csrf_token)
     console.log(form);
-    function basketUpdate(product_id,qty, is_delete) {
+    function basketUpdate(product_id,qty, is_delete, csrf_token) {
         var data ={};
         data.product_id = product_id;
         data.qty = qty;
-        var csrf_token = $('#form_buying_product [name="csrfmiddlewaretoken"]').val();
+        // var csrf_token = $('#form_buying_product [name="csrfmiddlewaretoken"]').val();
         data["csrfmiddlewaretoken"] = csrf_token;
 
             if (is_delete) {
@@ -35,7 +36,7 @@ $(document).ready(function() {
             data : data,
             cache :true,
             success:function (data) {
-                $("#form_buying_product")[0].reset();
+                // $("#form_buying_product").reset();
                 console.log('OK');
                 console.log(data.products_total_qty);
                 if (data.products_total_qty || data.products_total_qty==0 ) {
@@ -43,7 +44,8 @@ $(document).ready(function() {
                     console.log(data.products);
                     $('.basket-item').html("");
                     $.each(data.products,function (key,value) {
-                        $('.basket-item').append('<li>'+value.name+', qty: ' + value.qty +', '
+                        $('.basket-item').append('<li class="text-center">'+value.name+',<br>'
+                        +'qty: ' + value.qty +', '
                         +'total price: '+value.total_price+'UAH'
                         +'<a href="" id="id-delete_item" class="delete_item"  data-product_id = "'+value.id+'" >x</a>'
                         +'</li>'
@@ -79,11 +81,12 @@ $(document).ready(function() {
         var product_price = submit_btn.data('price');
         if (qty>0) {
             $('#myModal').modal('show');
+            document.getElementById("form_buying_product").reset();
         }
         // console.log(name);
         // console.log(product_id);
         // console.log(product_price);
-            basketUpdate(product_id, qty, is_delete = false)
+        basketUpdate(product_id, qty, is_delete = false, csrf_token)
 
     });
     $(document).on('click','.delete_item', function (e) {
@@ -91,7 +94,7 @@ $(document).ready(function() {
         $(this).closest('li').remove();
         qty = 0;
         product_id = $(this).data("product_id");
-        basketUpdate(product_id,qty, is_delete=true)
+        basketUpdate(product_id,qty, is_delete=true, csrf_token)
 
     });
 
@@ -106,8 +109,6 @@ $(document).ready(function() {
 
     $(document).on('change', ".product-in-basket-qty", function(){
         var current_nmb = $(this).val();
-        console.log(current_nmb);
-
         var current_tr = $(this).closest('tr');
         var current_price = parseFloat(current_tr.find('.product-price').text()).toFixed(2);
         console.log(current_price);
@@ -119,5 +120,19 @@ $(document).ready(function() {
     });
 
     carculatingBasketAmount();//
+
+    $("#home-buy-product-form").on('submit',function (e) {
+        e.preventDefault();
+        var submit_btn = $('#home-btn-buy');
+        var csrf_token = $('#home-buy-product-form [name="csrfmiddlewaretoken"]').val();
+        qty = 1;
+        var name = submit_btn.data('name');
+        var product_id = submit_btn.data('product_id');
+        var product_price = submit_btn.data('price');
+        console.log(qty);
+        console.log(product_id);
+       basketUpdate(product_id,qty, is_delete=false, csrf_token)
+
+    })
 
 });

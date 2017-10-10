@@ -14,8 +14,16 @@
         <p>{{ item.product.short_description|truncatechars_html:40 }}</p>
         <div> Price {{ item.product.price_per_item }}UAH</div>
 
-        <div class="add-to-card-btn ">
-            <button class="btn btn-success">Add to card</button>
+        <div class="add-to-card-btn" id="product-item-button">
+            <form id ="home-buy-product-form">
+                {% csrf_token %}
+            <button class="btn btn-success" id="home-btn-buy"
+                data-product_id = '{{ item.product.id }}'
+                data-name = '{{ item.name }}'
+                data-price = '{{ item.price_per_item }}'
+{#                data-target="#myModal"#}
+            >Add to card</button>
+            </form>
         </div>
     </div>
 </div>

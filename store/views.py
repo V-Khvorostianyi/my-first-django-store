@@ -18,4 +18,5 @@ def home(request):
 	product_image = ProductImage.objects.filter(is_active=True, is_main=True, product__category__is_active=True)
 	product_image_phone = ProductImage.objects.filter(product__category_id=1,is_active=True, is_main=True, product__category__is_active=True)
 	product_image_laptop = ProductImage.objects.filter(product__category__id=2,is_active=True, is_main=True, product__category__is_active=True)
+
 	return render(request, 'store/home.html', locals())

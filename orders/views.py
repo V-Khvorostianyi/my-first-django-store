@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
-from .models import *
 from .forms import *
 from  django.contrib.auth.models import User
 # Create your views here.
