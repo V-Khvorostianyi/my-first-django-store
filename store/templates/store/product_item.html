@@ -15,12 +15,11 @@
         <div> Price {{ item.product.price_per_item }}UAH</div>
 
         <div class="add-to-card-btn" id="product-item-button">
-            <form id ="home-buy-product-form">
-                {% csrf_token %}
+            <form id ="home-buy-product-form" name="{{ form.name.html_name }} ">{% csrf_token %}
             <button class="btn btn-success" id="home-btn-buy"
                 data-product_id = '{{ item.product.id }}'
-                data-name = '{{ item.name }}'
-                data-price = '{{ item.price_per_item }}'
+                data-name = '{{ item.product.name }}'
+                data-price = '{{ item.product.price_per_item }}'
 {#                data-target="#myModal"#}
             >Add to card</button>
             </form>

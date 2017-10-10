@@ -16,7 +16,7 @@ $(document).ready(function() {
     // //the end of test area
     var form = $('#form_buying_product');
     var csrf_token = $('#form_buying_product [name="csrfmiddlewaretoken"]').val();
-    console.log(csrf_token)
+    console.log(csrf_token);
     console.log(form);
     function basketUpdate(product_id,qty, is_delete, csrf_token) {
         var data ={};
@@ -125,12 +125,15 @@ $(document).ready(function() {
         e.preventDefault();
         var submit_btn = $('#home-btn-buy');
         var csrf_token = $('#home-buy-product-form [name="csrfmiddlewaretoken"]').val();
-        qty = 1;
+        var qty = 1;
         var name = submit_btn.data('name');
         var product_id = submit_btn.data('product_id');
         var product_price = submit_btn.data('price');
         console.log(qty);
         console.log(product_id);
+        console.log(name);
+        console.log(product_price);
+        console.log(csrf_token);
        basketUpdate(product_id,qty, is_delete=false, csrf_token)
 
     })
