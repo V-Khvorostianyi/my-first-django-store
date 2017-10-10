@@ -13,7 +13,10 @@ $(document).ready(function() {
     //         return false;
     //     }
     // }
-    // //the end of test area
+    // // //the end of test area
+    // var form = document.getElementsByTagName("FORM");
+    // var form = $(form);
+
     var form = $('#form_buying_product');
     var csrf_token = $('#form_buying_product [name="csrfmiddlewaretoken"]').val();
     console.log(csrf_token);
@@ -28,6 +31,7 @@ $(document).ready(function() {
             if (is_delete) {
                 data["is_delete"] = true;
             }
+            console.log(form);
         var url = form.attr('action');
         console.log(data)
         $.ajax({
@@ -36,7 +40,6 @@ $(document).ready(function() {
             data : data,
             cache :true,
             success:function (data) {
-                // $("#form_buying_product").reset();
                 console.log('OK');
                 console.log(data.products_total_qty);
                 if (data.products_total_qty || data.products_total_qty==0 ) {
@@ -73,6 +76,8 @@ $(document).ready(function() {
 
     form.on('submit',function (e) {
         e.preventDefault();
+        // var form = $('#form_buying_product');
+        // var csrf_token = $('#form_buying_product [name="csrfmiddlewaretoken"]').val();
         var qty = $('#number').val();
         console.log(qty);
         var submit_btn = $('#submit-btn');
@@ -123,6 +128,7 @@ $(document).ready(function() {
 
     $("#home-buy-product-form").on('submit',function (e) {
         e.preventDefault();
+        var form = $('#home-buy-product-form');
         var submit_btn = $('#home-btn-buy');
         var csrf_token = $('#home-buy-product-form [name="csrfmiddlewaretoken"]').val();
         var qty = 1;

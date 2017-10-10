@@ -4,6 +4,7 @@ from products.models import *
 from orders.views import *
 from .forms import *
 
+
 def product(request, product_id):
     product = Product.objects.get(id=product_id)
     session_key = request.session.session_key
