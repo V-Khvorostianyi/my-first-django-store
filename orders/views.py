@@ -65,6 +65,7 @@ def checkout(request):
                     product_in_cart = ProductInCard.objects.get(id=product_in_cart_id)
                     product_in_cart.qty = value
                     product_in_cart.order = order
+                    product_in_cart.is_active = False
                     product_in_cart.save(force_update=True)
 
                     ProductInOrder.objects.create(product=product_in_cart.product,
