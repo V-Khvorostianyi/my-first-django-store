@@ -15,7 +15,11 @@
         <div> Price {{ item.product.price_per_item }}UAH</div>
 
         <div class="add-to-card-btn ">
-            <button class="btn btn-success">Add to card</button>
+            <a href="{% url 'product' item.product.id %}">
+                <button class="btn btn-success">
+                <!--Add to card-->Go to product page
+                </button>
+            </a>
         </div>
     </div>
 </div>
