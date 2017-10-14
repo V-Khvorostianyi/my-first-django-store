@@ -1,0 +1,44 @@
+This app helps to control your own finances, your wallet.
+It contains debit and credit counts, choise period of the your mney spends,
+transaction with date, value and categories for spends.
+Also it contains functions with count your spends on average.
+App connects to database and make a manipulation with data, after return the data to db.
+
+Class Period
+ date field with start of period date, default value is today, set date with celendar
+ date field with end period date,set the date with celendar
+ function current ,date returns the current date,
+ function current day return current day of period
+
+Class Category
+ class text list
+  textlist :
+   cat...
+   cat...
+   cat...
+   add new category
+
+Class Account:
+ field debit decimal float
+ field credit decimal float
+ field total_debit = calc(Transaction if count is debit)
+ field total_credit = calc(Transaction if count is credit)
+ func balance:
+  return total_debit-total_credit 
+
+Class Transaction
+ char field description
+ func set_category()
+ func set value
+ func choose category
+ func choose count
+ date = Period.current_day()
+ func set_transaction
+
+Class Statistic
+ planed for every category
+ fact for every category
+ total spends planed
+ total spends fact
+
+
