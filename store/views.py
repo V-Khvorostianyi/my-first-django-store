@@ -25,5 +25,8 @@ def home(request):
     product_image_laptop = ProductImage.objects.filter(product__category__id=2, is_active=True, is_main=True,
                                                        product__category__is_active=True)
 
-
+    session_key = request.session.session_key
+    if not session_key:
+        request.session.cycle_key()
+    print(request.session.session_key)
     return render(request, 'store/home.html', locals())

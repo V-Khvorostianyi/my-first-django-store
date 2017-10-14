@@ -1,21 +1,5 @@
 $(document).ready(function() {
-    //this is modal test area
-    //
-    // $('#myModal').modal('toggle')
-    // var one =1;
-    // var number = document.getElementById('number');
 
-    // // Listen for input event on numInput.
-    // number.onkeydown = function(e) {
-    //     if(!((e.keyCode > 95 && e.keyCode < 106)
-    //       || (e.keyCode > 47 && e.keyCode < 58)
-    //       || e.keyCode == 8)) {
-    //         return false;
-    //     }
-    // }
-    // // //the end of test area
-    // var form = document.getElementsByTagName("FORM");
-    // var form = $(form);
 
     var form = $('#form_buying_product');
     var csrf_token = $('#form_buying_product [name="csrfmiddlewaretoken"]').val();
@@ -126,22 +110,22 @@ $(document).ready(function() {
 
     carculatingBasketAmount();//
 
-    $("#home-buy-product-form").on('submit',function (e) {
-        e.preventDefault();
-        var form = $('#home-buy-product-form');
-        var submit_btn = $('#home-btn-buy');
-        var csrf_token = $('#home-buy-product-form [name="csrfmiddlewaretoken"]').val();
-        var qty = 1;
-        var name = submit_btn.data('name');
-        var product_id = submit_btn.data('product_id');
-        var product_price = submit_btn.data('price');
-        console.log(qty);
-        console.log(product_id);
-        console.log(name);
-        console.log(product_price);
-        console.log(csrf_token);
-       basketUpdate(product_id,qty, is_delete=false, csrf_token)
-
-    })
+    // $(".home-buy-product-form").on('submit',function (e) {
+    //     e.preventDefault();
+    //     var form = $('.home-buy-product-form');
+    //     var submit_btn = $('.home-btn-buy');
+    //     var csrf_token = $('.home-buy-product-form [name="csrfmiddlewaretoken"]').val();
+    //     var qty = 1;
+    //     var name = submit_btn.data('name');
+    //     var product_id = submit_btn.data('product_id');
+    //     var product_price = submit_btn.data('price');
+    //     console.log(qty);
+    //     console.log(product_id);
+    //     console.log(name);
+    //     console.log(product_price);
+    //     console.log(csrf_token);
+    //    basketUpdate(product_id,qty, is_delete=false, csrf_token)
+    //
+    //  })
 
 });

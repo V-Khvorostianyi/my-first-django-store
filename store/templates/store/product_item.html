@@ -1,3 +1,4 @@
+
 <div class="col-md-3">
     <div class="product-item">
        <div>
@@ -15,8 +16,8 @@
         <div> Price {{ item.product.price_per_item }}UAH</div>
 
         <div class="add-to-card-btn" id="product-item-button">
-            <form id ="home-buy-product-form" name="{{ form.name.html_name }} ">{% csrf_token %}
-            <button class="btn btn-success" id="home-btn-buy"
+            <form id ="home-buy-product-form" class = "form-buy" name="{{ form.name.html_name }}"action=" {% url "basket_adding" %} ">{% csrf_token %}
+            <button class="btn btn-success buy-btn" id="home-btn-buy"
                 data-product_id = '{{ item.product.id }}'
                 data-name = '{{ item.product.name }}'
                 data-price = '{{ item.product.price_per_item }}'

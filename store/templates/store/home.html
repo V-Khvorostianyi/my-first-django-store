@@ -33,15 +33,14 @@
 
     <div class="section section3 laptop-container">
         <div class="container">
-        <div class="row">
-        <h1 class="text-center">Laptops</h1>
-            {% for item in product_image_laptop %}
-                {% include 'store/product_item.html' %}
-            {% endfor %}
+            <div class="row">
+                <h1 class="text-center">Laptops</h1>
+                {% for item in product_image_laptop %}
+                    {% include 'store/product_item.html' %}
+                {% endfor %}
             </div>
         </div>
     </div>
-
 
 {% endblock content %}
 
