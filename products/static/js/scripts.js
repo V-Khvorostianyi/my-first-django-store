@@ -1,19 +1,5 @@
 $(document).ready(function() {
-    //this is modal test area
-    //
-    // $('#myModal').modal('toggle')
 
-    var number = document.getElementById('number');
-
-    // // Listen for input event on numInput.
-    // number.onkeydown = function(e) {
-    //     if(!((e.keyCode > 95 && e.keyCode < 106)
-    //       || (e.keyCode > 47 && e.keyCode < 58)
-    //       || e.keyCode == 8)) {
-    //         return false;
-    //     }
-    // }
-    // //the end of test area
     var form;
     form = $('#form_buying_product');
     console.log(form);
@@ -42,18 +28,19 @@ $(document).ready(function() {
                     $('#card_total_orders').text("("+data.products_total_qty+")");
                     console.log(data.products);
                     $('.basket-item').html("");
+                    $('.basket-item').append('<li class="divider">'+'</li>')
                     $.each(data.products,function (key,value) {
-                        $('.basket-item').append('<li>'+value.name+', qty: ' + value.qty +', '
+                        $('.basket-item').append('<li class = "text-center">'+value.name+', qty: ' + value.qty +', '
                         +'total price: '+value.total_price+'UAH'
                         +'<a href="" id="id-delete_item" class="delete_item"  data-product_id = "'+value.id+'" >x</a>'
                         +'</li>'
                         +'<li class="divider">'+'</li>'
-                        +'<div class="text-center">'
                         );
                     });
                 //ok
-                $('.basket-item').append("<a href='/checkout/'>Go to Cart</a>"
-                        +'</div>')
+                $('.basket-item').append('<div class="text-center">'
+                    +"<a href='/checkout/'>Go to Cart</a>"
+                    +'</div>')
                 }
 
 
