@@ -11,7 +11,7 @@ html, body {
     margin-top: 20px;
 }
 .general-container {
-	background:url('../media/img/3.jpeg');
+	background-color: blueviolet;
 	height:100%;
 	font-weight: 400;
 }
@@ -34,4 +34,7 @@ html, body {
 	height: 200px;
 	background: grey;
 	position: relative;
+}
+img {
+	width:100%;
 }

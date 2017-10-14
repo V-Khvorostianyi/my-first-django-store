@@ -8,7 +8,7 @@
             <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 			<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
             <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-			<link rel="stylesheet" href = '{% static "store/store_page.css" %}'>
+            <link rel="stylesheet" href = '{% static "store/store_page.css" %}'>
 		</head>
 		<body>
 			<div class="general-container">
@@ -36,6 +36,24 @@
 						</div>
 					</div>
 				</div>
+        
+        <img src='{% static  "media/12.jpg"%}' id = "image"
+             onmouseover="style.width='110%'"
+             onmouseout="style.height='110%'">
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+{#        <script type="text/javascript">#}
+{#            var im = document.getElementById("image");#}
+{#                console.log(im);#}
+{#                  function imgsize(im) {#}
+{##}
+{#                        im.height = '200';#}
+{#                        im.width = '50';#}
+{#                    }#}
+{#                $(document).on('click','#image', function (e) {#}
+{#                    e.preventDefault();#}
+{#                    imgsize(im);#}
+{#                });#}
+{#        </script>#}
 		</body>
 
 </html>
