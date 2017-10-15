@@ -58,6 +58,7 @@
                     <form id="form_buying_product" class="form-inline buy-form" action=" {% url "basket_adding" %} "
                     name="{{ form.name.html_name }} "
                     >{% csrf_token %}
+                        <span>qty</span>
                         <input type="number" class="form-control input-num" id="number" min="1">
                         <button type="submit" class="btn btn-success btn-buy" id="submit-btn"
                                 data-product_id = '{{ product_id }}'
