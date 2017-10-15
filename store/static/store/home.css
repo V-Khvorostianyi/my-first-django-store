@@ -47,12 +47,13 @@ body,html,nav {
   padding-bottom: 90px;
 }
 .footer {
+  color:white;
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 80px;
-  background-color: white;
+  height: 200px;
+  background-color: #095c37;
 }
 
 .navbar {
@@ -65,7 +66,7 @@ padding-bottom: 120px;
 
 .discount-container {
 	position: absolute;
-	background: #24c74f;
+	background: #ff9000;
 	top: 5%;
 	font-weight: 700;
 	padding: 2px;
@@ -145,4 +146,8 @@ padding-bottom: 120px;
 
 .star {
 	color: red;
+}
+
+.input-num {
+	width:50px;
 }
