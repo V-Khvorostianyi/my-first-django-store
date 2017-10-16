@@ -151,3 +151,6 @@ padding-bottom: 120px;
 #number {
 	width:60px;
 }
+#submit-btn,#number {
+	display: inline-flex;
+}
