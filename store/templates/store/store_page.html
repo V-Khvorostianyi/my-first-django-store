@@ -8,6 +8,7 @@
             <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 			<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
             <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
             <link rel="stylesheet" href = '{% static "store/store_page.css" %}'>
 		</head>
 		<body>
@@ -36,10 +37,43 @@
 						</div>
 					</div>
 				</div>
-        
-        <img src='{% static  "media/12.jpg"%}' id = "image"
-             onmouseover="style.width='110%'"
-             onmouseout="style.height='110%'">
+
+
+
+
+
+<h2 class="w3-center">Manual Slideshow</h2>
+
+<div class="w3-content w3-display-container">
+  <img class="mySlides" src="{% static 'media/product_img/1-6s-iphone6s-rosegold-select-2015_2_2.jpg'%}">
+  <img class="mySlides" src="{% static 'media/product_img/apple_iphone_7_plus_black_1_1.jpg'%}">
+
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+</script>
+
+        <img src='{% static  "media/12.jpg"%}' id = "image">
+
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 {#        <script type="text/javascript">#}
 {#            var im = document.getElementById("image");#}
