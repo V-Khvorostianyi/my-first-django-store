@@ -105,7 +105,4 @@ $(document).ready(function() {
         carculatingBasketAmount();
     });
 
-    carculatingBasketAmount();//
-
-
 });
