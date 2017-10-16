@@ -8,9 +8,9 @@
             <div class="col-md-6">
                 <div class="product-image-item">
                 <!-- slideShow content-->
-                    <div class="w3-content w3-display-container item-img">
+                    <div class="w3-content w3-display-container  item-img">
                      {% for item in product.productimage_set.all %}
-                            <img src="{{ item.image.url }}" draggable="false" class="image-responsive item-img mySlides">
+                            <img src="{{ item.image.url }}" draggable="false" class="mySlides item-img image-responsive">
                      {% endfor %}
                         <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
                         <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
