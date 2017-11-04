@@ -23,26 +23,23 @@
           <ul class="nav navbar-nav home-navbar">
             <li><a href="{% url 'home'%}">Home</a></li>
             <li><a href="#footer">Contacts</a></li>
+	    <li><a href="/blog">Blog</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                    <li><a href="#arrivals"><b>New arrivals</b></a></li>
+                    <li><a href="/#arrivals"><b>New arrivals</b></a></li>
                   <li role="separator" class="divider"></li>
-                    <li><a href="#phones">Phones</a></li>
+                    <li><a href="/#phones">Phones</a></li>
                   <li role="separator" class="divider"></li>
-                    <li><a href="#laptops">Laptops</a></li>
-{#                  <li role="separator" class="divider"></li>#}
+                    <li><a href="/#laptops">Laptops</a></li>	   
               </ul>
             </li>
           </ul>
         </div>
       </div>
-    <ul>
-
-      </ul>
-          <ul class="nav navbar-nav  basket">
+          <ul class="nav navbar-nav home-navbar basket">
               <li class="dropdown text-center">
-                  <a href="#" class="dropdown-toggle cart-img-in-navbar" data-toggle="dropdown" role="button" aria-expanded="false">
+                  <a href="#" class="dropdown-toggle cart-img-in-navbar" data-toggle="dropdown" 			role="button" aria-haspopup="true" aria-expanded="false">
                       <img src="{% static 'media/cart.png' %}" class="img-responsive img-cart">
                       <span id="card_total_orders">
                       {% if products_total_nmb  %}
